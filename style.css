@@ -101,3 +101,11 @@ output {
   height: 25vmin;
   filter: drop-shadow(0 0 1vmin white);
 }
+canvas {
+	background: white;
+	width: 100vmin;
+	height: 100vmin;
+	top: 0;
+	position: fixed;
+	left: 0
+}

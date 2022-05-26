@@ -1,5 +1,7 @@
 const md = new markdownit({html:true})
 const image = document.querySelector('img')
+const canvas = document.querySelector('canvas')
+const ctx = canvas.getContext('2d')
 const csv = `
 ID,Prompt,Type,Variable,Choice 0 (Default),Choice 1,Choice 2,Choice 3,Choice 4
 Begin,"MURICAN TRAILS _Version
@@ -53,11 +55,13 @@ let id, prompt, type, variable, choices
 
 function start(_id){
   id = _id;
+  ctx.clearRect(0,0,w,h);
   [prompt, type, variable, ...choices] = data[id]
   console.log(id,data[id],choices)
   image.src = `media/${id}.png`
   prompt += endings[type]
-  write(render(prompt))
+  write((prompt))
+
 }
 function clickListener(){
   switch(type){
@@ -79,7 +83,7 @@ function enterListener({key}){
       if(choices[num]){
         start(choices[num])
       } else{
-        write(render('INVALID OPTION. PICK ANOTHER.\n'+prompt))
+        write(('INVALID OPTION. PICK ANOTHER.\n'+prompt))
       }
       break
     case 'SA':
@@ -88,9 +92,9 @@ function enterListener({key}){
     case 'PURCHASE':
       if(variables.Money >= choices[num]) {
         variables.Money -= choices[num]
-        write(render("YOU BOUGHT ONE ITEM.\n"+prompt))
+        write(("YOU BOUGHT ONE ITEM.\n"+prompt))
       } else {
-        write(render("YOU DON'T HAVE THE MONEY FOR THAT. PICK ANOTHER OR LEAVE MY STORE.\n"+prompt))
+        write(("YOU DON'T HAVE THE MONEY FOR THAT. PICK ANOTHER OR LEAVE MY STORE.\n"+prompt))
       }
 
       
@@ -107,8 +111,15 @@ function render(content){
     .replaceAll(/_(\w+)/g, (_,key) => variables[key] )
   )
 }
+let w = 1400
+let h = 1000
 function write(content, upTo = 0){
   output.innerHTML = content.slice(0, upTo)
+
+  ctx.font = '30px "Press Start 2P"';
+  ctx.fillStyle = 'white'
+  ctx.fillText(content[upTo], (upTo % 40)*30, Math.floor(upTo/40)*40+100);
+
   if(upTo < content.length) return setTimeout(write, 3, content, upTo+1)
 
   button = document.querySelector('button')
@@ -122,3 +133,60 @@ function write(content, upTo = 0){
 document.addEventListener('keydown',enterListener)
 document.addEventListener('click',clickListener)
 start('Begin')
+
+var lines = new Image();
+lines.src = 'media/lines.png';
+
+window.addEventListener('load', fakeCRT, false);
+function fakeCRT() {
+	  ctx.drawImage(lines, 0, 0, w, h);
+    var glcanvas, source, srcctx, texture, w, h, hw, hh, w75;
+
+    // Try to create a WebGL canvas (will fail if WebGL isn't supported)
+    try {
+       glcanvas = fx.canvas();
+    } catch (e) {return;}
+
+    // Assumes the first canvas tag in the document is the 2D game, but
+    // obviously we could supply a specific canvas element here.
+    source = document.getElementsByTagName('canvas')[0];
+    srcctx = source.getContext('2d');
+
+    // This tells glfx what to use as a source image
+    texture = glcanvas.texture(source);
+
+    // Just setting up some details to tweak the bulgePinch effect
+    w = source.width;
+    h = source.height;
+    hw = w / 2;
+    hh = h / 2;
+    w75 = w * 0.75;
+
+    // Hide the source 2D canvas and put the WebGL Canvas in its place
+    source.parentNode.insertBefore(glcanvas, source);
+    source.style.display = 'none';
+    glcanvas.className = source.className;
+    glcanvas.id = source.id;
+    source.id = 'old_' + source.id;
+
+    // It is pretty silly to setup a separate animation timer loop here, but
+    // this lets us avoid monkeying with the source game's code.
+    // It would make way more sense to do the following directly in the source
+    // game's draw function in terms of performance.
+    setInterval(function () {
+        // Give the source scanlines
+
+  
+
+		
+
+        // Load the latest source frame
+        texture.loadContentsOf(source);
+
+        // Apply WebGL magic
+        glcanvas.draw(texture)
+            .bulgePinch(hw, hh, w75, 0.12)
+            .vignette(0.25, 0.74)
+            .update();
+    }, Math.floor(1000 / 40));
+}
