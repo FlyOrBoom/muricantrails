@@ -1,6 +1,9 @@
 html{
   background: black;
   font-size: 1.8vmin;
+  width: 100%;
+  height: 100%;
+  padding: 0;
 }
 input, button {
   all: unset;
@@ -85,11 +88,16 @@ input::placeholder {
   }
 }
 body {
-  animation: textShadow 5s infinite;
-}
-body {
   display: block;
   width: 100vmin;
-  height: 100vmin;
-  filter: drop-shadow(0 0 10px white);
+  margin: auto;
+  animation: textShadow 5s infinite;
+}
+img {
+  height: 50vmin;
+  object-fit: cover;
+}
+output {
+  height: 25vmin;
+  filter: drop-shadow(0 0 1vmin white);
 }
