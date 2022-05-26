@@ -1,6 +1,9 @@
 const md = new markdownit({html:true})
 const image = document.querySelector('img')
 const canvas = document.querySelector('canvas')
+let glcanvas = fx.canvas()
+canvas.parentNode.insertBefore(glcanvas,canvas)
+canvas.style.display = 'none'
 const ctx = canvas.getContext('2d')
 const csv = `
 ID,Prompt,Type,Variable,Choice 0 (Default),Choice 1,Choice 2,Choice 3,Choice 4
@@ -59,6 +62,10 @@ function start(_id){
   [prompt, type, variable, ...choices] = data[id]
   console.log(id,data[id],choices)
   image.src = `media/${id}.png`
+  image.addEventListener('load',()=>{
+    ctx.drawImage(image,0,0,w,h)
+    setTimeout(render,10)
+  })
   prompt += endings[type]
   write((prompt))
 
@@ -103,7 +110,11 @@ function enterListener({key}){
   }
 
 }
-function render(content){
+const wrap = (s) => s.replace(
+    /(?![^\n]{1,60}$)([^\n]{1,60})\s/g, '$1\n'
+);
+
+function rrender(content){
   return md.render(
     content
     .replaceAll('\n','\n\n')
@@ -111,16 +122,31 @@ function render(content){
     .replaceAll(/_(\w+)/g, (_,key) => variables[key] )
   )
 }
-let w = 1400
-let h = 1000
-function write(content, upTo = 0){
-  output.innerHTML = content.slice(0, upTo)
+let w = 800
+let h = 600
+function write(content){
+  ctx.font = '20px "Press Start 2P"';
 
-  ctx.font = '30px "Press Start 2P"';
-  ctx.fillStyle = 'white'
-  ctx.fillText(content[upTo], (upTo % 40)*30, Math.floor(upTo/40)*40+100);
-
-  if(upTo < content.length) return setTimeout(write, 3, content, upTo+1)
+  let x = 0
+  let y = 0
+  let text = wrap(content)
+  for(let i = 0; i<text.length; i++){
+    let char = text[i]
+    if(char == '\n'){
+      x = 0
+      y += 30
+    } else {
+      x += 20
+      
+      setTimeout((_c,_x,_y)=>{
+        ctx.fillStyle = 'black'
+        ctx.fillText(_c,_x+6,_y+6)
+        ctx.fillStyle = 'white'
+        ctx.fillText(_c,_x+4,_y+4)
+      },i*10,char,x,y)
+      if(i%5==0) setTimeout(render, i*10)
+    }
+  }
 
   button = document.querySelector('button')
   if(button) button.focus()
@@ -130,63 +156,19 @@ function write(content, upTo = 0){
 
 }
 
+function render(){
+    let texture = glcanvas.texture(canvas);
+    texture.loadContentsOf(canvas);
+
+      // Apply WebGL magic
+    glcanvas.draw(texture)
+        .bulgePinch(w/2, h/2, w*0.75, 0.12)
+        .vignette(0.25, 0.74)
+        .lensBlur(1.5,1,0)
+        .brightnessContrast(0.1,0.1)
+        .update();
+}
 document.addEventListener('keydown',enterListener)
 document.addEventListener('click',clickListener)
 start('Begin')
 
-var lines = new Image();
-lines.src = 'media/lines.png';
-
-window.addEventListener('load', fakeCRT, false);
-function fakeCRT() {
-	  ctx.drawImage(lines, 0, 0, w, h);
-    var glcanvas, source, srcctx, texture, w, h, hw, hh, w75;
-
-    // Try to create a WebGL canvas (will fail if WebGL isn't supported)
-    try {
-       glcanvas = fx.canvas();
-    } catch (e) {return;}
-
-    // Assumes the first canvas tag in the document is the 2D game, but
-    // obviously we could supply a specific canvas element here.
-    source = document.getElementsByTagName('canvas')[0];
-    srcctx = source.getContext('2d');
-
-    // This tells glfx what to use as a source image
-    texture = glcanvas.texture(source);
-
-    // Just setting up some details to tweak the bulgePinch effect
-    w = source.width;
-    h = source.height;
-    hw = w / 2;
-    hh = h / 2;
-    w75 = w * 0.75;
-
-    // Hide the source 2D canvas and put the WebGL Canvas in its place
-    source.parentNode.insertBefore(glcanvas, source);
-    source.style.display = 'none';
-    glcanvas.className = source.className;
-    glcanvas.id = source.id;
-    source.id = 'old_' + source.id;
-
-    // It is pretty silly to setup a separate animation timer loop here, but
-    // this lets us avoid monkeying with the source game's code.
-    // It would make way more sense to do the following directly in the source
-    // game's draw function in terms of performance.
-    setInterval(function () {
-        // Give the source scanlines
-
-  
-
-		
-
-        // Load the latest source frame
-        texture.loadContentsOf(source);
-
-        // Apply WebGL magic
-        glcanvas.draw(texture)
-            .bulgePinch(hw, hh, w75, 0.12)
-            .vignette(0.25, 0.74)
-            .update();
-    }, Math.floor(1000 / 40));
-}

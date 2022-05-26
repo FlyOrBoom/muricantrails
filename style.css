@@ -94,15 +94,13 @@ body {
   animation: textShadow 5s infinite;
 }
 img {
-  height: 50vmin;
-  object-fit: cover;
+  display: none;
 }
 output {
   height: 25vmin;
   filter: drop-shadow(0 0 1vmin white);
 }
 canvas {
-	background: white;
 	width: 100vmin;
 	height: 100vmin;
 	top: 0;
