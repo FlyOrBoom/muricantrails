@@ -6,40 +6,108 @@
     <title>Murican Trails</title>
     <meta name=description content='An APUSH project by Vritti, Yingjia, Xing, and Andre'>
     <meta name=author content=Xing>
-    <link href='style.css' rel=stylesheet>
+    <link href=media/pressstart.ttf rel=preload as=font>
+    <link href=style.css rel=stylesheet>
   </head>
   <body>
+    <input autofocus>
 <div>
-ID,Prompt,Type,Variable,Choice 0 (Default),Choice 1,Choice 2,Choice 3,Choice 4
+  ID,Prompt,Type,Music,Variable,Choice 0 (Default),Choice 1,Choice 2,Choice 3,Choice 4
 Begin,"MURICAN TRAILS _Version
-An APUSH project by Vritti, Yingjia, Xing, and Andre",,,Role,,,,
+An APUSH project by Vritti, Yingjia, Xing, and Andre",,,,Role,,,,
 Role,"Many kinds of people have done a road trip across America.
 You may:
 1. Be a middling history student with illusions of grandeur
-2. ~~Be a recent graduate ready to gamble~~ AGE RESTRICTED
-3. ~~Be but a humble public school teacher~~ AGE RESTRICTED",MC,MainCharacter,,Vritti,,,
+2. ~Be a recent graduate ready to gamble~ AGE RESTRICTED
+3. ~Be but a humble public school teacher~ AGE RESTRICTED",MC,wedidntstartthefire,MainCharacter,,Vritti,,,
 Vritti,"What is the nickname of the first leader?
-Vritti the",SA,Vritti,Yingjia,,,,
+Vritti the",SA,,Vritti,Yingjia,,,,
 Yingjia,"What is the nickname of the second in command?
-Yingjia the",SA,Yingjia,Xing,,,,
+Yingjia the",SA,,Yingjia,Xing,,,,
 Xing,"What is the nickname of the third wheel?
-Xing the",SA,Xing,Andre,,,,
+Xing the",SA,,Xing,Andre,,,,
 Andre,"What is the nickname of the fourth student?
-Andre the",SA,Andre,Buy0,,,,
-Buy0,"Before leaving Arcadia you should buy equipment and supplies. You have $_Money in cash, but you don't have to spend it all now.",,,Buy1,,,,
-Buy1,You can buy whatever you need at Paul's Lost and Found.,,,Buy2,,,,
-Buy2,"Hello, I'm Paul. So you're going across America! I can fix you up with what you need:",,,Buy3,,,,
+Andre the",SA,,Andre,Buy0,,,,
+Buy0,"Before leaving Arcadia you should buy equipment and supplies. You have $_Money in cash, but you don't have to spend it all now.",,,,Buy1,,,,
+Buy1,You can buy whatever you need at Paul's Lost and Found.,,,,Buy2,,,,
+Buy2,"Hello, I'm Paul. So you're going across America! I can fix you up with what you need:",,,,Buy3,,,,
 Buy3,"Paul's Lost and Found
 1. Water bottle: $5.00
 2. Nathan's food: $25.00
-3. Keys to the schoolbus: $99.00",PURCHASE,,Steal0,5,25,99,
+3. Keys to the schoolbus: $99.00",PURCHASE,,,Steal0,5,25,99,
 Steal0,"You spot a schoolbus sitting on Campus Drive.
 1. Try your keys on the schoolbus.
-2. Give Vritti the _Vritti your keys to try on the schoolbus.",MC,,,Steal1,Steal1,,
+2. Give Vritti the _Vritti your keys to try on the schoolbus.",MC,,,,Steal1,Steal1,,
 Steal1,"The keys work!
 1. Steal the schoolbus
-2. Not not steal the schoolbus",MC,,,Depart,Depart,,
-Depart,Unfinished,,,,,,,
+2. Not not steal the schoolbus",MC,,,,Depart,Depart,,
+Depart,"Xing wants to go to Yosemite, but everyone else wants to go to Las Vegas.
+1. Go to Las Vegas",MC,,,,GoToVegas,,,
+,,,,,,,,,
+Yosemite,,,,,,,,,
+,There is an accident ahead. Your journey will take 3 more days. Might as well check out Yosemite.,,,,,,,,
+,,,,,,,,,
+,"You arrive at Yosemite National Park.
+1. Start hiking around
+2. ",,,,,,,,
+,You turn in your APENG transcendentalism assignment 10 months late.,,,,,,,,
+,,,,,,,,,
+YosemiteEnd,"You get tired of Yosemite. Do you want to go to Las Vegas?
+1. Yes
+2. No",MC,,,,GoToVegas,Hijack,,
+Hijack0,"On your way to Not Las Vegas, you see a group of people standing in the middle of the road
+1. Stop the bus",MC,,,,Hijack1,,,
+Hijack1,"You stop the bus. It turns out that these people are GANGSTERS. They want to go to Las Vegas to launder their money.
+1. You are very scared of their tall, macho image and you comply.",MC,,,GoToVegas,,,,
+,,,,,,,,,
+,"You arrive at Las Vegas. What do you want to do?
+1. Try to sneak into a casino
+2. Tour Las Vegas",,,,,Casino,,,
+Casino,That is illegal. You get caught by Security Officer Mr. Green. Try something else.,,,,,,,,
+,Check into your hotel (very nice). Go out into Las Vegas. Explore other hotels. (Vritti). Go to water show (Yingjia). Eat at buffet.,,,,,,,,
+,Someone breaks the plate and gets you all kicked out of the buffet.,,,,,,,,
+,Out on the streets you buy a ticket to Cirque du Soleil / David Copperfield,,,,,,,,
+,Get pizza. Lady Gaga,,,,,,,,
+,Go to sleep.,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,Salt Lake City. Andre's family. Ice skating.,,,,,,,,
+,Andre has to go to a wedding,,,,,,,,
+,,,,,,,,,
+,Seattle: Park in indoor garage. Get down to Amazon Grocery Store.,,jeffreybezos,,,,,,
+,,PURCHASE,,,,,,,
+,Go to see space needle --> pikeplace market,,,,,,,,
+,,,,,,,,,
+,Mall of America,,,,,,,,
+,"Matching jojo siwa merch (bows), eating nickolodeon food",,,,,,,,
+,,,,,,,,,
+,Chicago,,,,,,,,
+,"boat tour around chicago river, the bean, walk around park",,,,,,,,
+,"navy pier (ferris wheel), deep dish pizza (giorsdanos)",,,,,,,,
+,,,,,,,,,
+,Niagara Falls,,,,,,,,
+,booker t washington,,,,,,,,
+,Cave tour,,,,,,,,
+,,,,,,,,,
+,Boston,,,,,,,,
+,recreate boston tea party,,,,,,,,
+,"You buy tea to spill.
+1. British tea $10000
+2. Cheap lipton ice tea from Quincy Market $1 greenback",PURCHASE,,,,,,,
+,fenway park,,,,,,,,
+,john f kennedy presidential museum,,,,,,,,
+,,,,,,,,,
+,New York City,,,,,,,,
+,new york style pizza,,,,,,,,
+,Andre gets hit by a taxicab,,,,,,,,
+,"statue of liberty, empire state, brooklyn bridge, times square, central park, moma, 9/11 memorial, wtc",,,,,,,,
+,,,,,,,,,
+,Philadelphia,,,,,,,,
+,"philly cheese steak, liberty bell, independence hall, reading terminal market, love sculpture. rocky statue",,,,,,,,
+,,,,,,,,,
+,Washington DC,,,,,,,,
+,"join protest at lafayette park, white house (joe biden!!!), lincoln memorial, washington memorial",,,,,,,,
+,dinner with joe biden and jill biden,,,,,,,,
 </div>
     <script src='papa.js'></script>
     <script src='glfx.js'></script>

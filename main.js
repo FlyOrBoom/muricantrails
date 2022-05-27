@@ -9,8 +9,8 @@ const data =
 const endings = {
   'MC': '\n<I>',
   'SA': ' <I>',
-  '': '\n <button>PRESS SPACE TO CONTINUE</button>',
-  'PURCHASE': '\nYou have $_Money.\nBuy an item: <I>\n<button>PRESS SPACE TO EXIT</button>'
+  '': '\n|PRESS SPACE TO CONTINUE|',
+  'PURCHASE': '\nYou have $_Money.\nBuy an item: <I>\n|PRESS SPACE TO EXIT|'
 }
 
 const v = {
@@ -19,14 +19,20 @@ const v = {
   Items: {}
 }
 
-let input
-let id, prompt, type, variable, choices
+const fontSize = 18
+const fontWidth = 17
+const fontHeight = 18
+
+const input = document.querySelector('input')
+input.addEventListener('blur',input.focus)
+
+let id, prompt, type, music, variable, choices
 
 const format = string => string
     .replaceAll('\n','\n\n')
-    .replaceAll('<I>','<input placeholder="...">')
+    .replaceAll('<I>','|            |')
     .replaceAll(/_(\w+)/g, (_,key) => v[key] )
-    .replaceAll(/(?![^\n]{1,56}$)([^\n]{1,56})\s/g, '$1\n')
+    .replaceAll(/(?![^\n]{1,57}$)([^\n]{1,57})\s/g, '$1\n')
 
 let w = 1000
 let h = 800
@@ -49,7 +55,7 @@ async function show(_id){
   ctx.clearRect(0,0,w,h)
   ctx.fillStyle = '#000'
   ctx.fillRect(0,0,w,h);
-  [prompt, type, variable, ...choices] = data[id]
+  [prompt, type, music, variable, ...choices] = data[id]
   console.log(id,data[id],choices)
   image.src = `media/${id}.png`
   image.addEventListener('load',()=>{
@@ -64,7 +70,11 @@ async function main(){
   document.addEventListener('keydown',enterListener)
   document.addEventListener('click',clickListener)
 
-  initCanvas()
+  const fontFace = new FontFace('pressstart', 'url(media/pressstart.ttf)');
+  const font = await fontFace.load()
+  document.fonts.add(font)
+
+  await initCanvas()
   show('Begin')
 }
 main()
@@ -81,8 +91,17 @@ async function clickListener(){
 }
 
 async function enterListener({key}){
-  if(type == 'PURCHASE' && key == ' ') return clickListener()
+  if(key == ' '){
+    switch(type){
+      case 'PURCHASE':
+      case '':
+        clickListener()
+        return
+    }
+  }
+
   if(key != 'Enter') return
+
   if(variable) v[variable] = input.value
   const num = parseInt(input.value)
   switch(type){
@@ -112,37 +131,57 @@ async function enterListener({key}){
 }
 
 async function write(content){
-  ctx.font = '18px pressstart'
 
   let x = 0
   let y = 20 
   let text = format(content)
-  for(let i = 0; i<text.length; i++){
-    let char = text[i]
-    if(char == '\n'){
-      x = 0
-      y += 30
-    } else {
-      x += 18 
-      
-      setTimeout((_c,_x,_y)=>{
-        ctx.fillStyle = 'black'
-        ctx.strokeStyle = 'black'
-        ctx.lineWidth = 2
-        ctx.fillText(_c,_x+4,_y+4)
-        ctx.strokeText(_c,_x,_y)
-        ctx.fillStyle = 'white'
-        ctx.fillText(_c,_x,_y)
-      },i*10,char,x,y)
-      if(i%5==0) setTimeout(render, i*10)
-    }
+  let style = {
+    italic: false,
+    bold: false,
+    underline: false,
+    strikethrough: false,
   }
+  let _id = id
+  for(let i = 0; i<text.length; i++){
+    setTimeout(()=>{
+      if(_id != id) return
+      let char = text[i]
+      switch(char){
+        case '\n':
+          x = 0
+          y += 30
+          break
+        case '~':
+          style.strikethrough ^= 1
+          break
+        case '|':
+          style.underline ^= 1
+          break
+        case '*':
+          style.italic ^= 1
+          break
+        default:
+          x += fontWidth 
 
-  button = document.querySelector('button')
-  if(button) button.focus()
+          ctx.font = `${fontSize}px pressstart ${'bold'.repeat(style.bold)}`
 
-  input = document.querySelector('input')
-  if(input) input.focus()
+          ctx.fillStyle = 'black'
+          ctx.strokeStyle = 'black'
+          ctx.lineWidth = 2
+          ctx.fillText(char,x+4,y+4)
+          ctx.strokeText(char,x,y)
+          if(style.strikethrough) ctx.fillRect(x+4,y+4+fontHeight/2,fontWidth,3)
+          if(style.underline) ctx.fillRect(x+4,y+4+fontHeight,fontWidth,3)
+
+          ctx.fillStyle = 'white'
+          ctx.fillText(char,x,y)
+          if(style.strikethrough) ctx.fillRect(x,y+fontHeight/2,fontWidth,3)
+          if(style.underline) ctx.fillRect(x,y+fontHeight,fontWidth,3)
+
+          render()
+        }
+    },i*20)
+  }
 
 }
 
