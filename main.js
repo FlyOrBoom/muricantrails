@@ -30,7 +30,6 @@ let id, prompt, type, music, variable, choices
 let counter = 0
 
 const format = string => string
-	.replaceAll('\n', '\n\n')
 	.replaceAll('<I>', '|            |')
 	.replaceAll(/_(\w+)/g, (_, key) => v[key])
 	.replaceAll(/(?![^\n]{1,57}$)([^\n]{1,57})\s/g, '$1\n')
@@ -69,6 +68,7 @@ async function show(_id) {
 		image.ctx.drawImage(image.content, 0, 0, w, h)
 		setTimeout(render, 10)
 	})
+	if(music) new Audio(`media/${music}.mp3`).play()
 	prompt += endings[type]
 	write(prompt)
 }
@@ -88,24 +88,17 @@ main()
 
 async function clickListener() {
 	switch (type) {
-		case '':
-			show(choices[0])
-			break
 		case 'PURCHASE':
+		case 'DEPART':
+		case 'ARRIVE':
+		case '':
 			show(choices[0])
 			break
 	}
 }
 
 async function enterListener({ key }) {
-	if (key == ' ') {
-		switch (type) {
-			case 'PURCHASE':
-			case '':
-				clickListener()
-				return
-		}
-	}
+	if (key == ' ') clickListener()
 
 	if (key != 'Enter') return
 
@@ -139,9 +132,9 @@ async function enterListener({ key }) {
 async function write(content) {
 	input.value = ''
 	counter++;
-	let x = 0
-	let y = 20
 	text.content = format(content)
+	let x = 0
+	let y = 780 - text.content.split('\n').length*40
 	let style = {
 		italic: false,
 		bold: false,
@@ -157,7 +150,7 @@ async function write(content) {
 			switch (char) {
 				case '\n':
 					x = 0
-					y += 30
+					y += 40
 					break
 				case '~':
 					style.strikethrough ^= 1
