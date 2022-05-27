@@ -1,44 +1,10 @@
 const md = new markdownit({html:true})
-const image = document.querySelector('img')
-const canvas = document.querySelector('canvas')
-let glcanvas = fx.canvas()
-canvas.parentNode.insertBefore(glcanvas,canvas)
-canvas.style.display = 'none'
-const ctx = canvas.getContext('2d')
-const csv = `
-ID,Prompt,Type,Variable,Choice 0 (Default),Choice 1,Choice 2,Choice 3,Choice 4
-Begin,"MURICAN TRAILS _Version
-An APUSH project by Vritti, Yingjia, Xing, and Andre",,,Role,,,,
-Role,"Many kinds of people have done a road trip across America.
-You may:
-1. Be a middling history student with illusions of grandeur
-2. ~~Be a recent graduate ready to gamble~~ AGE RESTRICTED
-3. ~~Be but a humble public school teacher~~ AGE RESTRICTED",MC,MainCharacter,,Vritti,,,
-Vritti,"What is the nickname of the first leader?
-Vritti the",SA,Vritti,Yingjia,,,,
-Yingjia,"What is the nickname of the second in command?
-Yingjia the",SA,Yingjia,Xing,,,,
-Xing,"What is the nickname of the third wheel?
-Xing the",SA,Xing,Andre,,,,
-Andre,"What is the nickname of the fourth student?
-Andre the",SA,Andre,Buy0,,,,
-Buy0,"Before leaving Arcadia you should buy equipment and supplies. You have $_Money in cash, but you don't have to spend it all now.",,,Buy1,,,,
-Buy1,You can buy whatever you need at Paul's Lost and Found.,,,Buy2,,,,
-Buy2,"Hello, I'm Paul. So you're going across America! I can fix you up with what you need:",,,Buy3,,,,
-Buy3,"Paul's Lost and Found
-1. Water bottle: $5.00
-2. Nathan's food: $25.00
-3. Keys to the schoolbus: $99.00",PURCHASE,,Steal0,5,25,99,
-Steal0,"You spot a schoolbus sitting on Campus Drive.
-1. Try your keys on the schoolbus.
-2. Give Vritti the _Vritti your keys to try on the schoolbus.",MC,,,Steal1,Steal1,,
-Steal1,"The keys work!
-1. Steal the schoolbus
-2. Not not steal the schoolbus",MC,,,Depart,Depart,,
-Depart,Unfinished,,,,,,,
-`
-
-const data = Object.fromEntries(Papa.parse(csv).data
+const image = new Image()
+const data = 
+  Object.fromEntries(
+    Papa.parse(
+      document.querySelector('div').innerHTML
+    ).data
 .map(([id,...rest])=>[id,rest]))
 
 const output = document.querySelector('output')
@@ -110,26 +76,32 @@ function enterListener({key}){
   }
 
 }
-const wrap = (s) => s.replace(
-    /(?![^\n]{1,60}$)([^\n]{1,60})\s/g, '$1\n'
-);
 
-function rrender(content){
-  return md.render(
+function format(content){
+  return (
     content
     .replaceAll('\n','\n\n')
     .replaceAll('<I>','<input placeholder="...">')
     .replaceAll(/_(\w+)/g, (_,key) => variables[key] )
+    .replaceAll(/(?![^\n]{1,50}$)([^\n]{1,50})\s/g, '$1\n')
   )
 }
-let w = 800
-let h = 600
+let w = 1000
+let h = 800
+const canvas = document.querySelector('canvas')
+let glcanvas = fx.canvas()
+canvas.parentNode.insertBefore(glcanvas,canvas)
+canvas.style.display = 'none'
+const ctx = canvas.getContext('2d')
+ctx.translate(w/10,h/10)
+ctx.scale(4/5,4/5)
+ctx.textBaseline = 'top'
 function write(content){
   ctx.font = '20px "Press Start 2P"';
 
   let x = 0
-  let y = 0
-  let text = wrap(content)
+  let y = 20 
+  let text = format(content)
   for(let i = 0; i<text.length; i++){
     let char = text[i]
     if(char == '\n'){
@@ -140,9 +112,9 @@ function write(content){
       
       setTimeout((_c,_x,_y)=>{
         ctx.fillStyle = 'black'
-        ctx.fillText(_c,_x+6,_y+6)
-        ctx.fillStyle = 'white'
         ctx.fillText(_c,_x+4,_y+4)
+        ctx.fillStyle = 'white'
+        ctx.fillText(_c,_x,_y)
       },i*10,char,x,y)
       if(i%5==0) setTimeout(render, i*10)
     }
@@ -162,9 +134,9 @@ function render(){
 
       // Apply WebGL magic
     glcanvas.draw(texture)
-        .bulgePinch(w/2, h/2, w*0.75, 0.12)
+        .bulgePinch(w/2, h/2, w*2/3, 0.15)
         .vignette(0.25, 0.74)
-        .lensBlur(1.5,1,0)
+        .lensBlur(0.2,1,0)
         .brightnessContrast(0.1,0.1)
         .update();
 }

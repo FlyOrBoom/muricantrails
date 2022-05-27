@@ -93,17 +93,10 @@ body {
   margin: auto;
   animation: textShadow 5s infinite;
 }
-img {
+div, img {
   display: none;
 }
-output {
-  height: 25vmin;
-  filter: drop-shadow(0 0 1vmin white);
-}
 canvas {
-	width: 100vmin;
-	height: 100vmin;
-	top: 0;
-	position: fixed;
-	left: 0
+  width: 100vmin;
+  height: 100vmin;
 }
