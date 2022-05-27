@@ -1,15 +1,33 @@
-const data =
+const data = (
 	Object.fromEntries(
 		Papa.parse(
 			document.querySelector('div').innerHTML
 		).data
-			.map(([id, ...rest]) => [id, rest]))
+		.map(([id, ...rest]) => [id, rest]))
+)
 
+const dash = '\t'.repeat(8)
 const endings = {
-	'MC': '\n<I>',
-	'SA': ' <I>',
-	'': '\n|PRESS SPACE TO CONTINUE|',
-	'PURCHASE': '\nYou have $_Money.\nBuy an item: <I>\n|PRESS SPACE TO EXIT|'
+	'MC': `
+${dash}
+`,
+
+	'SA':` ${dash}`,
+
+	'': `
+|PRESS SPACE TO CONTINUE|`,
+
+	'DEPART': `
+|PRESS SPACE TO DEPART|`,
+
+	'ARRIVE': `
+|PRESS SPACE TO CONTINUE|`,
+
+	'PURCHASE': `
+You have $_Money.
+Buy an item: ${dash}
+|PRESS SPACE TO EXIT|`
+
 }
 
 const v = {
@@ -22,8 +40,6 @@ const fontSize = 18
 const fontWidth = 17
 const fontHeight = 18
 
-const input = document.querySelector('input')
-input.addEventListener('blur', input.focus)
 
 let id, prompt, type, music, variable, choices
 
@@ -37,9 +53,24 @@ const format = string => string
 let w = 1000
 let h = 800
 
-const text = { canvas: document.createElement('canvas'), content: '' }
-const image = { canvas: document.createElement('canvas'), content: new Image() }
-const combined = { canvas: document.createElement('canvas') }
+const text = {
+	canvas: document.createElement('canvas'),
+	content: ''
+}
+const image = {
+	canvas: document.createElement('canvas'),
+	content: new Image()
+}
+const combined = {
+	canvas: document.createElement('canvas')
+}
+const input = {
+	element: document.querySelector('textarea'),
+	x: w,
+	y: h
+}
+input.element.addEventListener('blur', input.element.focus)
+
 const glCanvas = fx.canvas()
 
 async function initCanvas() {
@@ -51,33 +82,43 @@ async function initCanvas() {
 	combined.texture = glCanvas.texture(combined.canvas)
 	combined.ctx.translate(w / 8, h / 8)
 	combined.ctx.scale(3 / 4, 3 / 4)
+
 	text.ctx.textBaseline = 'top'
+	text.ctx.font = `${fontSize}px pressstart`
+	text.ctx.strokeStyle = 'black'
+	text.ctx.lineWidth = 2
+	text.ctx.shadowColor = 'black'
+	text.ctx.shadowOffsetX = 4
+	text.ctx.shadowOffsetY = 4
+
+	text.ctx.fillStyle = 'white'
 	document.body.prepend(glCanvas)
 }
 
 async function show(_id) {
-	id = _id;
-	input.value = ''
+	id = _id
+	input.x = input.y = 0
 	image.ctx.clearRect(0, 0, w, h)
 	image.ctx.fillStyle = '#000'
 	image.ctx.fillRect(0, 0, w, h);
 	[prompt, type, music, variable, ...choices] = data[id]
-	console.log(id, data[id], choices)
+	//console.log(id, data[id], choices)
 	image.content.src = `media/${id}.png`
 	image.content.addEventListener('load', () => {
 		image.ctx.drawImage(image.content, 0, 0, w, h)
 		setTimeout(render, 10)
 	})
-	if(music) new Audio(`media/${music}.mp3`).play()
+	if (music) new Audio(`media/${music}.mp3`).play()
 	prompt += endings[type]
 	write(prompt)
 }
 
 async function main() {
 	document.addEventListener('keydown', enterListener)
+	document.addEventListener('input', inputListener)
 	document.addEventListener('click', clickListener)
 
-	const fontFace = new FontFace('pressstart', 'url(media/pressstart.ttf)');
+	const fontFace = new FontFace('pressstart', 'url(media/pressstart.ttf)')
 	const font = await fontFace.load()
 	document.fonts.add(font)
 
@@ -96,14 +137,15 @@ async function clickListener() {
 			break
 	}
 }
-
 async function enterListener({ key }) {
 	if (key == ' ') clickListener()
 
 	if (key != 'Enter') return
 
-	if (variable) v[variable] = input.value
-	const num = parseInt(input.value)
+	if (variable) v[variable] = input.element.value
+
+	const num = parseInt(input.element.value)
+
 	switch (type) {
 		case 'MC':
 			if (choices[num]) {
@@ -120,36 +162,50 @@ async function enterListener({ key }) {
 				v.Money -= choices[num]
 				write(("YOU BOUGHT ONE ITEM.\n" + prompt))
 			} else {
-				write(("YOU DON'T HAVE THE MONEY FOR THAT. PICK ANOTHER OR LEAVE MY STORE.\n" + prompt))
+				write(("YOU DON'T HAVE THE MONEY FOR THAT. PICK ANOTHER OR LEAVE MY STORE.\n" +
+					prompt))
 			}
 
 
-		//if(item in v.items) variables.items[item]++
-		//else v.items[item] = 0
+			//if(item in v.items) variables.items[item]++
+			//else v.items[item] = 0
 	}
+
 }
 
-async function write(content) {
-	input.value = ''
-	counter++;
-	text.content = format(content)
-	let x = 0
-	let y = 780 - text.content.split('\n').length*40
+async function inputListener({
+	data
+}) {
+	if(!input.x && !input.y) return
+	text.ctx.clearRect(input.x, input.y, fontWidth*16, fontHeight)
+	write(input.element.value, input.x, input.y, false)
+}
+
+async function write(content, x = 20, y = 780, auto = true) {
 	let style = {
 		italic: false,
 		bold: false,
 		underline: false,
 		strikethrough: false,
 	}
-	let _counter = counter
-	text.ctx.clearRect(0,0,w,h)
-	for (let i = 0; i < text.content.length; i++) {
+	let string = format(content)
+
+	if (auto) {
+		counter++
+		y -= string.split('\n').length * 40
+		clearInput()
+		input.x = input.y = 0
+		text.ctx.clearRect(0, 0, w, h)
+	}
+
+	let _counter = counter;
+	for (let i = 0; i < string.length; i++) {
 		setTimeout(() => {
 			if (_counter != counter) return
-			let char = text.content[i]
+			let char = string[i]
 			switch (char) {
 				case '\n':
-					x = 0
+					x = 20
 					y += 40
 					break
 				case '~':
@@ -161,40 +217,50 @@ async function write(content) {
 				case '*':
 					style.italic ^= 1
 					break
-				default:
-					x += fontWidth
-
-					text.ctx.font = `${fontSize}px pressstart ${'bold'.repeat(style.bold)}`
-
+				case '\t':
+					let span = 2 * fontWidth
+					if (!input.x && !input.y) {
+						clearInput()
+						input.x = x
+						input.y = y
+					}
 					text.ctx.fillStyle = 'black'
-					text.ctx.strokeStyle = 'black'
-					text.ctx.lineWidth = 2
-					text.ctx.fillText(char, x + 4, y + 4)
-					text.ctx.strokeText(char, x, y)
-					if (style.strikethrough) text.ctx.fillRect(x + 4, y + 4 + fontHeight / 2, fontWidth, 3)
-					if (style.underline) text.ctx.fillRect(x + 4, y + 4 + fontHeight, fontWidth, 3)
-
+					text.ctx.fillRect(x + 4, y + 4 + fontHeight, span, 3)
 					text.ctx.fillStyle = 'white'
+					text.ctx.fillRect(x, y + fontHeight, span, 3)
+					render()
+					x += span
+					break
+				default:
+					text.ctx.strokeText(char, x, y)
 					text.ctx.fillText(char, x, y)
-					if (style.strikethrough) text.ctx.fillRect(x, y + fontHeight / 2, fontWidth, 3)
-					if (style.underline) text.ctx.fillRect(x, y + fontHeight, fontWidth, 3)
+					if (style.strikethrough)
+						text.ctx.fillRect(x, y + fontHeight / 3, fontWidth, 3)
+					if (style.underline)
+						text.ctx.fillRect(x, y + fontHeight, fontWidth, 3)
 
 					render()
+					x += fontWidth
 			}
-		}, i * 20)
+		}, i * 20 * auto)
 	}
 
 }
 
 async function render() {
-	combined.ctx.drawImage(image.canvas,0,0,w,h)
-	combined.ctx.drawImage(text.canvas,0,0,w,h)
+	combined.ctx.drawImage(image.canvas, 0, 0, w, h)
+	combined.ctx.drawImage(text.canvas, 0, 0, w, h)
 	combined.texture.loadContentsOf(combined.canvas)
 
 	// Apply WebGL magic
-	glCanvas.draw(combined.texture).bulgePinch(w / 2, h / 2, w * 3 / 4, 0.25)
+	glCanvas.draw(combined.texture).bulgePinch(w / 2, h / 2, w * 3 / 4,
+			0.25)
 		.vignette(0.25, 0.74)
 		//.lensBlur(0.2,1,0)
 		.brightnessContrast(0.1, 0.1)
 		.update()
+}
+async function clearInput(){
+
+						input.element.value = ''
 }
