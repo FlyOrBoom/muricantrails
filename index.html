@@ -12,162 +12,167 @@
   <body>
     <textarea autofocus></textarea>
 <div>
-  ID,Prompt,Type,Music,Variable,Space,Choice 1,Choice 2,Choice 3,Choice 4
+ID,Prompt,Background,Foreground,Music,Variable,Type,Space,Choice 1,Choice 2,Choice 3,Choice 4
 Begin,"MURICAN TRAILS _Version
-An APUSH project by Vritti, Yingjia, Xing, and Andre",,,,Title,,,,
-Title,,,wedidntstartthefire,,Role,,,,
+An APUSH project by Vritti, Yingjia, Xing, and Andre",,,,,,Title,,,,
+Title,,title,,wedidntstartthefire,,,Role,,,,
 Role,"Many kinds of people have done a road trip across America. You may:
 1. Be a middling history student with illusions of grandeur
 2. ~Be a recent graduate ready to gamble~ AGE RESTRICTED
-3. ~Be but a humble public school teacher~ AGE RESTRICTED",MC,,MainCharacter,,Vritti,,,
+3. ~Be but a humble public school teacher~ AGE RESTRICTED",,,,MainCharacter,MC,,Vritti,,,
 Vritti,"What is the nickname of the first leader?
-Vritti the",SA,,Vritti,Yingjia,,,,
+Vritti the",,vritti,,Vritti,SA,Yingjia,,,,
 Yingjia,"What is the nickname of the second in command?
-Yingjia the",SA,,Yingjia,Xing,,,,
+Yingjia the",,yingjia,,Yingjia,SA,Xing,,,,
 Xing,"What is the nickname of the third wheel?
-Xing the",SA,,Xing,Andre,,,,
+Xing the",,xing,,Xing,SA,Andre,,,,
 Andre,"What is the nickname of the fourth student?
-Andre the",SA,,Andre,Buy0,,,,
-Buy0,"Before leaving Arcadia you should buy equipment and supplies. You have $_Money in cash, but you don't have to spend it all now.",,,,Buy1,,,,
-Buy1,You can buy whatever you need at Paul's Lost and Found.,,,,Buy2,,,,
-Buy2,"Hello, I'm Paul. So you're going across America! I can fix you up with what you need:",,,,Buy3,,,,
+Andre the",,andre,,Andre,SA,Buy0,,,,
+Buy0,"Before leaving Arcadia you should buy equipment and supplies. You have $_Money in cash, but you don't have to spend it all now.",,suitcases,,,,Buy1,,,,
+Buy1,You can buy whatever you need at Paul's Lost and Found.,,green,,,,Buy2,,,,
+Buy2,"Hello, I'm Paul. So you're going across America! I can fix you up with what you need:",,green,,,,Buy3,,,,
 Buy3,"Paul's Lost and Found
 1. Water bottle: $5.00
 2. Nathan's food: $25.00
-3. Keys to the schoolbus: $99.00",PURCHASE,,,Steal0,5,25,99,
+3. Keys to the schoolbus: $99.00",,green,,,PURCHASE,Steal0,5,25,99,
 Steal0,"You spot a schoolbus sitting on Campus Drive.
 1. Try your keys on the schoolbus.
-2. Give Vritti the _Vritti your keys to try on the schoolbus.",MC,,,,Steal1,Steal1,,
+2. Give Vritti the _Vritti your keys to try on the schoolbus.",road,bus,,,MC,,Steal1,Steal1,,
 Steal1,"The keys work! You all hop on the schoolbus.
 1. Drive the schoolbus
-2. Not not drive the schoolbus",MC,,,,Depart,Depart,,
+2. Not not drive the schoolbus",road,bus,,,MC,,Depart,Depart,,
 Depart,"Xing wants to go to Yosemite, but everyone else wants to go to Las Vegas.
 1. Support Xing autocracy
-2. Support majority democracy",MC,,,,YosemiteTrip0,VegasTrip0,,
-,,,,,,,,,
-VegasTrip0,You embark on your journey to Las Vegas!,DEPART,,,VegasTrip1,,,,
-,You pass through California's Central Valley,,,,,,,,
-VegasTrip1,There is an accident ahead. Your journey will take 3 more days.,,,,VegasTrip2,,,,
+2. Support majority democracy",road,map,,,MC,,YosemiteTrip0,VegasTrip0,,
+,,,,,,,,,,,
+VegasTrip0,You embark on your journey to Las Vegas!,,,,,DEPART,VegasTrip1,,,,
+,You pass through California's Central Valley,,,,,,,,,,
+VegasTrip1,There is an accident ahead. Your journey will take 3 more days.,,,,,,VegasTrip2,,,,
 VegasTrip2,"Might as well go to Yosemite?
-1. Fine",ARRIVE,,,,YosemiteTrip0,,,
-YosemiteTrip0,You embark on your journey to Yosemite!,DEPART,,,,,,,
-YosemiteTrip1,,,,,,,,,
+1. Fine",,,,,ARRIVE,,YosemiteTrip0,,,
+YosemiteTrip0,You embark on your journey to Yosemite!,,,,,DEPART,YosemiteTrip1,,,,
+YosemiteTrip1,,,,,,,YosemiteTrip2,,,,
 YosemiteTrip2,"You arrive at Yosemite National Park.
-1. Look around",ARRIVE,,,,Yosemite0,,,
-,,,,,,,,,
+1. Look around",,,,,ARRIVE,,Yosemite0,,,
+,,,,,,,,,,,
 Yosemite0,"You see a trail towards the mountains, and some deer roaming around.
 1. Start hiking up the trail
-2. Chase the deers",,,,,Trail,Deer,,
-Trail,"While hiking, you come across Yosemite Falls. It's very beautiful and you feel at peace. Is this what Thoreau felt like?",,,,,,,,
-Deer,You start chasing around the deers and find yourself at Yosemite Falls. It's very beautiful and you feel at peace. Is this what Thoreau felt like?,,,,,,,,
-YosemiteSleep,"You return to the campsite as the sun sets and you start a fire. You enjoy some canned refried beans, potatoes, and s'mores before you tuck in for the night.",,,,,,,,
-,,,,,,,,,
+2. Chase the deers",,,,,,,Trail,Deer,,
+Trail,"While hiking, you come across Yosemite Falls. It's very beautiful and you feel at peace. Is this what Thoreau felt like?",,,,,,,,,,
+Deer,You start chasing around the deers and find yourself at Yosemite Falls. It's very beautiful and you feel at peace. Is this what Thoreau felt like?,,,,,,,,,,
+YosemiteSleep,"You return to the campsite as the sun sets and you start a fire. You enjoy some canned refried beans, potatoes, and s'mores before you tuck in for the night.",,,,,,,,,,
+,,,,,,,,,,,
 YosemiteEnd,"You get tired of Yosemite. Do you want to go to Las Vegas?
 1. Yes
-2. No",DEPART,,,,GoToVegas,Hijack,,
+2. No",,,,,DEPART,,GoToVegas,Hijack,,
 Hijack0,"On your way to Not Las Vegas, you see a group of people standing in the middle of the road
-1. Stop the bus",MC,,,,Hijack1,,,
+1. Stop the bus",,,,,MC,,Hijack1,,,
 Hijack1,"You stop the bus. It turns out that these people are GANGSTERS. They want to go to Las Vegas to launder their money.
-1. You are very scared of their tall, macho image and you comply.",MC,,,GoToVegas,,,,
+1. You are very scared of their tall, macho image and you comply.",,,,,MC,GoToVegas,,,,
 Vegas0,"You arrive at Las Vegas
-1. Okay",ARRIVE,,,,,,,
-,,,,,,,,,
+1. Okay",,,,,ARRIVE,,,,,
+,,,,,,,,,,,
 Vegas1,"What do you want to do?
 1. Try to sneak into a casino
-2. Tour Las Vegas",,,,,Casino,,,
-Casino,That is illegal. You get caught by Security Officer Mr. Green. Try something else.,,,,,,,,
-Tour,"You check into the Bellagio Hotel (nice!) before leaving to walk around the Strip. But before you get too far, you stop at a buffet to fill your stomach.",,,,,,,,
+2. Tour Las Vegas",,,,,,,Casino,,,
+Casino,That is illegal. You get caught by Security Officer Mr. Green. Try something else.,,,,,,,,,,
+Tour,"You check into the Bellagio Hotel (nice!) before leaving to walk around the Strip. But before you get too far, you stop at a buffet to fill your stomach.",,,,,,,,,,
 Plate,"While eating, Andre accidentally drops a plate and breaks it! An employee confronts you. What will you do?
 1. Run
-2. Bribe the employee",,,,,Consequence,Consequence,,
-Consequence,You get caught by security. They kick you out.,,,,,,,,
-,"After getting kicked out of the buffet, you decide to buy tickets to a David Copperfield Magic Show. David Copperfied is very good at magic. You have fun.",,,,,,,,
-,It's been a long day. You return to the hotel and go to sleep.,,,,,,,,
-,,,,,,,,,
+2. Bribe the employee",,,,,,,Consequence,Consequence,,
+Consequence,You get caught by security. They kick you out.,,,,,,,,,,
+,"After getting kicked out of the buffet, you decide to buy tickets to a David Copperfield Magic Show. David Copperfied is very good at magic. You have fun.",,,,,,,,,,
+,It's been a long day. You return to the hotel and go to sleep.,,,,,,,,,,
+,,,,,,,,,,,
 VegasEnd,"Andre wants to see his family at Salt Lake City.
-1. Go there",DEPART,,,,UtahTrip0,,,
-UtahTrip0,,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
-,,ARRIVE,,,,,,,
-,,,,,,,,,
-Utah0,Salt Lake City. Andre's family. Ice skating.,,,,,,,,
-,Andre has to go to a wedding,,,,,,,,
-,"While the rest of the group rested in the bus, Andre went to a cousin's wedding that he had recently been last minture invited to.Andre had fallen asleep during most of the wedding but he definently enjoyed the food. ",,,,,,,,
-, Andre was super embarrased for showing up without a suit but his cousin didn't mind and was happy for his attendence. Andre returned later that night with loads of food he took.,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
-UtahEnd,Utah is so hot this time of year. Some place up North might be better.,,,,,,,,
-,,,,,,,,,
-,"At Seattle, you park the bus underneath the Space Needle.",,,,,,,,
-,,,,,,,,,
-,Everyone decides they want to go to the top of the Space Needle. You pay the entrance fee and take the elevator to the top.,,,,,,,,
+1. Go there",,,,,DEPART,,UtahTrip0,,,
+UtahTrip0,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,ARRIVE,,,,,
+,,,,,,,,,,,
+Utah0,Salt Lake City. Andre's family. Ice skating.,,,,,,,,,,
+,Andre has to go to a wedding,,,,,,,,,,
+,"While the rest of the group rested in the bus, Andre went to a cousin's wedding that he had recently been last minture invited to.Andre had fallen asleep during most of the wedding but he definently enjoyed the food. ",,,,,,,,,,
+, Andre was super embarrased for showing up without a suit but his cousin didn't mind and was happy for his attendence. Andre returned later that night with loads of food he took.,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+UtahEnd,Utah is so hot this time of year. Some place up North might be better.,,,,,,,,,,
+,,,,,,,,,,,
+,"At Seattle, you park the bus underneath the Space Needle.",,,,,,,,,,
+,,,,,,,,,,,
+,Everyone decides they want to go to the top of the Space Needle. You pay the entrance fee and take the elevator to the top.,,,,,,,,,,
 ,"You take in the view of the Seattle cityscape. You can see Mt. Whittier in the distance. It starts getting windy. Do you want to go down?
 1. Yes
-2. No",,,,,Descend0,Descend1,,
-Descend0,You descend the Space Needle. It's lunch time and you're hungry. The Pike Place Market sounds like a good place to get food.,,,,,,,,
-Descend1,"You stay at the top of the Space Needle for a little longer, but it's lunch time and you start to get hungry, so you descend. The Pike Place Market sounds like a good place to get food.",,,,,,,,
-,"You arrive at Pike Place Market. You see some fish being thrown around, but the group eventually decides they want Thai food. You go to Jasmine Thai Restaurant and enjoy some authentic thai food.",,,,,,,,
+2. No",,,,,,,Descend0,Descend1,,
+Descend0,You descend the Space Needle. It's lunch time and you're hungry. The Pike Place Market sounds like a good place to get food.,,,,,,,,,,
+Descend1,"You stay at the top of the Space Needle for a little longer, but it's lunch time and you start to get hungry, so you descend. The Pike Place Market sounds like a good place to get food.",,,,,,,,,,
+,"You arrive at Pike Place Market. You see some fish being thrown around, but the group eventually decides they want Thai food. You go to Jasmine Thai Restaurant and enjoy some authentic thai food.",,,,,,,,,,
 ,"Before you leave for the Midwest, Yingjia suggests stocking up some more supplies.
 1. Go to some boring grocery store
-2. Go to the Amazon grocery store",,jeffreybezos,,,Grocery0,Grocery1,,
+2. Go to the Amazon grocery store",,,jeffreybezos,,,,Grocery0,Grocery1,,
 Grocery0,"Nobody else wants to go to a boring grocery store. You end up going to the Amazon grocery store anyways.
-1. Fine",,,,,Grocery1,,,
-Grocery1,"You arrive at the Amazon grocery store. As you walk in, you see Jeff Bezos! He greets you and offers to pay for all your food.",,,,,,,,
+1. Fine",,,,,,,Grocery1,,,
+Grocery1,"You arrive at the Amazon grocery store. As you walk in, you see Jeff Bezos! He greets you and offers to pay for all your food.",,,,,,,,,,
 ,"You're being endorsed by Jess Bezos! What do you want to buy?
-1. A family pack of chips: $15.00",PURCHASE,,,,,,,
-,"After stocking up on food, it's time to go to Minnesota to see the Mall of America.",,,,,,,,
-,,,,,,,,,
-Mall of America,Mall of America,,,,,,,,
-,"Matching jojo siwa merch (bows), eating nickolodeon food",,,,,,,,
-,"You get to the Mall of America in Minnesota! What is the first thing you want to do?
-1. Go get Jojo Siwa Merch!!
-2. Go on fun rollercoasters ",,,,,,,,
-,,,,,,,,,
-Chicago,Chicago,,,,,,,,
-,"boat tour around chicago river, the bean, walk around park",,,,,,,,
-,"navy pier (ferris wheel), deep dish pizza (giorsdanos)",,,,,,,,
-,You are now in Chicago! What is the first thing you would like to do? a. Walk down to Navy ,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
+1. A family box of chips: $15.00
+2. A big bag of sour gummy worms: $12.00
+3. A large pack of Coca-Cola: $10.00
+4. 40oz Prime Wagyu Ribeye Steak: $235.00",,,,,PURCHASE,,,,,
+,"After stocking up on food, it's time to go to Minnesota to see the Mall of America.",,,,,,,,,,
+,,,,,,,,,,,
+Mall of America,Mall of America,,,,,,,,,,
+,"You get to the Mall of America in Minnesota! What is the first thing you want to do? 
+1. Go get Jojo Siwa Merch!! 
+2. Go on fun rollercoasters ",,,,,,,JojoSiwa,Rollercoaster,,
+JojoSiwa,You go buy Jojo Siwa merchandise. Now everyone has their own sparkly bows. Very pretty.,,,,,,,,,,
+Rollercoaster,"You go on one of the rollercoasters. It was fun, but after getting off rollercoaster, Xing throws up in a nearby trash can due to nausea. Guess you can't go on any more rides.",,,,,,,,,,
+,"Everyone else, on the other hand, is very hungry. Luckily, there's a lot of Nickolodeon-inspired food at the Nickelodeon Universe. You enjoy a burger and milkshake before returning to the schoolbus for your next stop.",,,,,,,,,,
+,,,,,,,,,,,
+Chicago,Chicago,,,,,,,,,,
+,"boat tour around chicago river, the bean, walk around park",,,,,,,,,,
+,"navy pier (ferris wheel), deep dish pizza (giorsdanos)",,,,,,,,,,
+,You are now in Chicago! What is the first thing you would like to do? a. Walk down to Navy ,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
 Niagara,"After taking in the view at the top of Niagara Falls, what do you want to do?
 1. Take a boat trip underneath the Falls
-2. Explore its cave system",,,,,,,,
-,,,,,,,,,
+2. Explore its cave system",,,,,,,,,,
+,,,,,,,,,,,
 ,"Unlike the times of Brooker T. Washington, the U.S. side of the falls no longer have segregated hotels.
 1. Book a hotel on the American side
-2. Move to Canada (for 1 night)",,,,,,,,
-,Cave tour,,,,,,,,
-,,,,,,,,,
-,It's morning in Niagara Falls.,DEPART,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
-Boston,Boston is a very noisy place. ,,,,,,,,
-,recreate boston tea party,,,,,,,,
+2. Move to Canada (for 1 night)",,,,,,,,,,
+,Cave tour,,,,,,,,,,
+,,,,,,,,,,,
+,It's morning in Niagara Falls.,,,,,DEPART,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Boston,Boston is a very noisy place. ,,,,,,,,,,
+,recreate boston tea party,,,,,,,,,,
 ,"You buy tea to spill.
 1. British tea $10000
-2. Cheap lipton ice tea from Quincy Market $1 greenback",PURCHASE,,,,,,,
-,fenway park,,,,,,,,
-,john f kennedy presidential museum,,,,,,,,
-,,,,,,,,,
-NY,You enter the city from thet suburbs.,,,,,,,,
-,New York City,,,,,,,,
-,new york style pizza,,,,,,,,
-,Andre gets hit by a taxicab,,,,,,,,
-,"statue of liberty, empire state, brooklyn bridge, times square, central park, moma, 9/11 memorial, wtc",,,,,,,,
-,,,,,,,,,
-,Philadelphia,,,,,,,,
-,"philly cheese steak, liberty bell, independence hall, reading terminal market, love sculpture. rocky statue",,,,,,,,
-,,,,,,,,,
-,Washington DC,,,,,,,,
-,"join protest at lafayette park, white house (joe biden!!!), lincoln memorial, washington memorial",,,,,,,,
-,dinner with joe biden and jill biden,,,,,,,,
-,,,,,,,,,
-,Orlando,,,,,,,,
-,"disneyworld, universal, kennedy space center",,,,,,,,
-,,,,,,,,,
-,END,,,,,,,,
+2. Cheap lipton ice tea from Quincy Market $1 greenback",,,,,PURCHASE,,,,,
+,fenway park,,,,,,,,,,
+,john f kennedy presidential museum,,,,,,,,,,
+,,,,,,,,,,,
+NY,You enter the city from thet suburbs.,,,,,,,,,,
+,New York City,,,,,,,,,,
+,new york style pizza,,,,,,,,,,
+,Andre gets hit by a taxicab,,,,,,,,,,
+,"statue of liberty, empire state, brooklyn bridge, times square, central park, moma, 9/11 memorial, wtc",,,,,,,,,,
+,,,,,,,,,,,
+,Philadelphia,,,,,,,,,,
+,"philly cheese steak, liberty bell, independence hall, reading terminal market, love sculpture. rocky statue",,,,,,,,,,
+,,,,,,,,,,,
+,Washington DC,,,,,,,,,,
+,"join protest at lafayette park, white house (joe biden!!!), lincoln memorial, washington memorial",,,,,,,,,,
+,dinner with joe biden and jill biden,,,,,,,,,,
+,,,,,,,,,,,
+,Orlando,,,,,,,,,,
+,"disneyworld, universal, kennedy space center",,,,,,,,,,
+,,,,,,,,,,,
+,END,,,,,,,,,,
 </div>
     <script src='papa.js'></script>
     <script src='glfx.js'></script>

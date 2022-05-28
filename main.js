@@ -9,8 +9,7 @@ const data = (
 const dash = '\t'.repeat(8)
 const endings = {
 	'MC': `
-${dash}
-`,
+${dash}`,
 
 	'SA':` ${dash}`,
 
@@ -41,7 +40,7 @@ const fontWidth = 17
 const fontHeight = 18
 
 
-let id, prompt, type, music, variable, choices
+let id, prompt, background, foreground, type, music, variable, choices
 
 let counter = 0
 
@@ -59,7 +58,8 @@ const text = {
 }
 const image = {
 	canvas: document.createElement('canvas'),
-	content: new Image()
+	foreground: new Image(),
+	background: new Image(),
 }
 const combined = {
 	canvas: document.createElement('canvas')
@@ -101,22 +101,28 @@ async function show(_id) {
 	image.ctx.clearRect(0, 0, w, h)
 	image.ctx.fillStyle = '#000'
 	image.ctx.fillRect(0, 0, w, h);
-	[prompt, type, music, variable, ...choices] = data[id]
+	[prompt, background, foreground, music, variable, type, ...choices] = data[id]
 	//console.log(id, data[id], choices)
-	image.content.src = `media/${id}.png`
-	image.content.addEventListener('load', () => {
-		image.ctx.drawImage(image.content, 0, 0, w, h)
-		setTimeout(render, 10)
-	})
+	image.background.src = `media/${background}.png`
+	image.foreground.src = `media/${foreground}.png`
 	if (music) new Audio(`media/${music}.mp3`).play()
 	prompt += endings[type]
 	write(prompt)
 }
 
 async function main() {
-	document.addEventListener('keydown', enterListener)
-	document.addEventListener('input', inputListener)
+	input.element.addEventListener('keydown', enterListener)
+	input.element.addEventListener('input', inputListener)
 	document.addEventListener('click', clickListener)
+
+	image.background.addEventListener('load', () => {
+		image.ctx.drawImage(image.background, 0, 0, w, h)
+		render()
+	})
+	image.foreground.addEventListener('load', () => {
+		image.ctx.drawImage(image.foreground, 0, 0, w, h)
+		setTimeout(render, 100)
+	})
 
 	const fontFace = new FontFace('pressstart', 'url(media/pressstart.ttf)')
 	const font = await fontFace.load()
@@ -138,7 +144,9 @@ async function clickListener() {
 	}
 }
 async function enterListener({ key }) {
+
 	if (key == ' ') clickListener()
+
 
 	if (key != 'Enter') return
 
@@ -255,7 +263,7 @@ async function render() {
 	// Apply WebGL magic
 	glCanvas.draw(combined.texture).bulgePinch(w / 2, h / 2, w * 3 / 4,
 			0.25)
-		.vignette(0.25, 0.74)
+		.vignette(0.25, 0.7)
 		//.lensBlur(0.2,1,0)
 		.brightnessContrast(0.1, 0.1)
 		.update()
