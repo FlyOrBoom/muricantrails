@@ -27,18 +27,22 @@ Steal0,"You spot a schoolbus sitting on Campus Drive.
 2. Give Vritti the _Vritti your keys to try on the schoolbus.",road,bus,,,MC,,,Steal1,Steal1,,
 Steal1,"The keys work! You all hop on the schoolbus.
 1. Drive the schoolbus
-2. Not not drive the schoolbus",road,bus,,,MC,,,Depart,Depart,,
-Depart,"Xing wants to go to Yosemite, but everyone else wants to go to Las Vegas.
-1. Support Xing autocracy
-2. Support majority democracy",road,map,,,MC,,,YosemiteTrip1,VegasTrip0,,
+2. Not not drive the schoolbus",road,bus,,,MC,,,Autocracy,Autocracy,,
+Autocracy,"Xing wants to go to Yosemite, but everyone else wants to go to Las Vegas.
+1. Support Xing's autocracy
+2. What the heck is an autocracy",road,map,,,MC,,,YosemiteTrip1,Depart,,
+Depart,"An autocracy is a system of government where one person holds all the power.
+1. Ok sounds good. I trust Xing.
+2. Nah too totalitarian for me. let's go to Las Vegas.",road,map,,,MC,,,YosemiteTrip1,VegasTrip0,,
 ,,,,,,,,,,,,
-VegasTrip0,You embark on your journey to Las Vegas!,,,,,TRIP,VegasTrip1,,,,,
-,You pass through California's Central Valley,,,,,TRIP,,,,,,
-VegasTrip1,There is an accident ahead. Your journey will take 3 more days.,,,,,TRIP,VegasTrip2,,,,,
-VegasTrip2,Might as well go to Yosemite?,,,,,TRIP,YosemiteTrip0,,,,,
-YosemiteTrip0,You embark on your journey to Yosemite!,,,,,TRIP,YosemiteTrip1,,,,,
-YosemiteTrip1,You embark on your journey to Yosemite!,,,,,TRIP,YosemiteTrip2,,,,,
-YosemiteTrip2,You arrive at Yosemite National Park.,,,,,TRIP,,,Yosemite0,,,
+VegasTrip0,You embark on your journey to Las Vegas!,,bus,,,TRIP,VegasTrip1,,,,,
+,Xing thanks Eisenhower for the Interstate Highway System.,,bus,,,,,,,,,
+,You pass through California's Central Valley,,bus,,,TRIP,,,,,,
+VegasTrip1,There is an accident ahead. Your journey will take 3 more days.,,bus,,,TRIP,VegasTrip2,,,,,
+VegasTrip2,Might as well go to Yosemite?,,bus,,,TRIP,YosemiteTrip0,,,,,
+YosemiteTrip0,You embark on your journey to Yosemite!,,bus,,,TRIP,YosemiteTrip1,,,,,
+YosemiteTrip1,You embark on your journey to Yosemite!,,bus,,,TRIP,YosemiteTrip2,,,,,
+YosemiteTrip2,You arrive at Yosemite National Park.,,bus,,,TRIP,,,Yosemite0,,,
 ,,,,,,,,,,,,
 Yosemite0,"You see a trail towards the mountains, and some deer roaming around.
 1. Start hiking up the trail

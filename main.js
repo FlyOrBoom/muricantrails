@@ -71,8 +71,8 @@ async function initCanvas() {
 		x.ctx = x.canvas.getContext('2d')
 	})
 	combined.texture = glCanvas.texture(combined.canvas)
-	combined.ctx.translate(w / 8, h / 8)
-	combined.ctx.scale(3 / 4, 3 / 4)
+	combined.ctx.translate(w / 10, h / 10)
+	combined.ctx.scale(4 / 5, 4 / 5)
 
 	text.ctx.textBaseline = 'top'
 	text.ctx.font = `${fontSize}px pressstart`
@@ -83,6 +83,8 @@ async function initCanvas() {
 	text.ctx.shadowOffsetY = 4
 
 	text.ctx.fillStyle = 'white'
+
+	image.ctx.imageSmoothingEnabled = false
 	document.body.prepend(glCanvas)
 }
 
@@ -102,6 +104,14 @@ async function show(_id) {
 	write(prompt)
 }
 
+async function drawBackground(){
+	image.ctx.drawImage(image.background, 0, 0, w, h)
+	render()
+}
+async function drawForeground(){
+	image.ctx.drawImage(image.foreground, 0, 0, w, h)
+	render()
+}
 async function main() {
 	data = (
 		Object.fromEntries(
@@ -115,13 +125,13 @@ async function main() {
 	input.element.addEventListener('input', inputListener)
 	document.addEventListener('click', clickListener)
 
-	image.background.addEventListener('load', () => {
-		image.ctx.drawImage(image.background, 0, 0, w, h)
-		render()
-	})
+	image.background.addEventListener('load', drawBackground)
 	image.foreground.addEventListener('load', () => {
-		image.ctx.drawImage(image.foreground, 0, 0, w, h)
-		setTimeout(render, 100)
+		setTimeout(drawForeground,100)
+		setTimeout(drawBackground,200)
+		setTimeout(drawForeground,300)
+		setTimeout(drawBackground,400)
+		setTimeout(drawForeground,500)
 	})
 
 	const fontFace = new FontFace('pressstart', 'url(media/pressstart.ttf)')
@@ -259,7 +269,7 @@ async function render() {
 
 	// Apply WebGL magic
 	glCanvas.draw(combined.texture).bulgePinch(w / 2, h / 2, w * 3 / 4,
-			0.25)
+			0.2)
 		.vignette(0.25, 0.7)
 		.brightnessContrast(0.1, 0.1)
 		.update()
