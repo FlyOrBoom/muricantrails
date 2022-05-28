@@ -1,26 +1,16 @@
-const data = (
-	Object.fromEntries(
-		Papa.parse(
-			document.querySelector('div').innerHTML
-		).data
-		.map(([id, ...rest]) => [id, rest]))
-)
-
+let data
 const dash = '\t'.repeat(8)
 const endings = {
 	'MC': `
 ${dash}`,
 
-	'SA':` ${dash}`,
+	'SA': ` ${dash}`,
 
 	'': `
 |PRESS SPACE TO CONTINUE|`,
 
-	'DEPART': `
-|PRESS SPACE TO DEPART|`,
-
-	'ARRIVE': `
-|PRESS SPACE TO CONTINUE|`,
+	'TRIP': `
+|PRESS SPACE TO KEEP GOING|`,
 
 	'PURCHASE': `
 You have $_Money.
@@ -30,7 +20,7 @@ Buy an item: ${dash}
 }
 
 const v = {
-	Version: '2022.05.26.1',
+	Version: '2022.05.27.1',
 	Money: 1600,
 	Items: {}
 }
@@ -38,9 +28,10 @@ const v = {
 const fontSize = 18
 const fontWidth = 17
 const fontHeight = 18
+const lineHeight = 35
 
 
-let id, prompt, background, foreground, type, music, variable, choices
+let id, prompt, background, foreground, type, music, variable, space, short, choices
 
 let counter = 0
 
@@ -101,7 +92,8 @@ async function show(_id) {
 	image.ctx.clearRect(0, 0, w, h)
 	image.ctx.fillStyle = '#000'
 	image.ctx.fillRect(0, 0, w, h);
-	[prompt, background, foreground, music, variable, type, ...choices] = data[id]
+	[prompt, background, foreground, music, variable, type, space, short, ...choices] =
+	data[id]
 	//console.log(id, data[id], choices)
 	image.background.src = `media/${background}.png`
 	image.foreground.src = `media/${foreground}.png`
@@ -111,6 +103,14 @@ async function show(_id) {
 }
 
 async function main() {
+	data = (
+		Object.fromEntries(
+			Papa.parse(
+				await (await fetch('story.csv')).text()
+			).data
+			.map(([id, ...rest]) => [id, rest]))
+	)
+
 	input.element.addEventListener('keydown', enterListener)
 	input.element.addEventListener('input', inputListener)
 	document.addEventListener('click', clickListener)
@@ -134,49 +134,43 @@ async function main() {
 main()
 
 async function clickListener() {
-	switch (type) {
-		case 'PURCHASE':
-		case 'DEPART':
-		case 'ARRIVE':
-		case '':
-			show(choices[0])
-			break
-	}
+	enterListener({
+		key: ' '
+	})
 }
-async function enterListener({ key }) {
+async function enterListener({
+	key
+}) {
+	//text.ctx.clearRect(input.x, input.y, fontWidth * 16, fontHeight)
 
-	if (key == ' ') clickListener()
+	if (key == ' ' && space) show(space)
 
+	if (key == 'Enter') {
 
-	if (key != 'Enter') return
+		if (variable) v[variable] = input.element.value
 
-	if (variable) v[variable] = input.element.value
-
-	const num = parseInt(input.element.value)
-
-	switch (type) {
-		case 'MC':
+		if (short) {
+			show(short)
+		} else {
+			const num = parseInt(input.element.value) - 1
 			if (choices[num]) {
-				show(choices[num])
+				if (type == 'PURCHASE') {
+					if (v.Money >= choices[num]) {
+						v.Money -= choices[num]
+						write(("YOU BOUGHT ONE ITEM.\n" + prompt))
+					} else {
+						write(("YOU DON'T HAVE THE MONEY FOR THAT. PICK ANOTHER OR LEAVE MY STORE.\n" +
+							prompt))
+					}
+				} else {
+					show(choices[num])
+				}
 			} else {
 				write('INVALID OPTION. PICK ANOTHER.\n' + prompt)
 			}
-			break
-		case 'SA':
-			show(choices[0])
-			break
-		case 'PURCHASE':
-			if (v.Money >= choices[num]) {
-				v.Money -= choices[num]
-				write(("YOU BOUGHT ONE ITEM.\n" + prompt))
-			} else {
-				write(("YOU DON'T HAVE THE MONEY FOR THAT. PICK ANOTHER OR LEAVE MY STORE.\n" +
-					prompt))
-			}
-
-
-			//if(item in v.items) variables.items[item]++
-			//else v.items[item] = 0
+		}
+		//if(item in v.items) variables.items[item]++
+		//else v.items[item] = 0
 	}
 
 }
@@ -184,12 +178,12 @@ async function enterListener({ key }) {
 async function inputListener({
 	data
 }) {
-	if(!input.x && !input.y) return
-	text.ctx.clearRect(input.x, input.y, fontWidth*16, fontHeight)
+	if (!input.x && !input.y) return;
+	text.ctx.clearRect(input.x, input.y, fontWidth * 16, fontHeight)
 	write(input.element.value, input.x, input.y, false)
 }
 
-async function write(content, x = 20, y = 780, auto = true) {
+async function write(content, x = 20, y = 790, auto = true) {
 	let style = {
 		italic: false,
 		bold: false,
@@ -200,7 +194,7 @@ async function write(content, x = 20, y = 780, auto = true) {
 
 	if (auto) {
 		counter++
-		y -= string.split('\n').length * 40
+		y -= string.split('\n').length * lineHeight
 		clearInput()
 		input.x = input.y = 0
 		text.ctx.clearRect(0, 0, w, h)
@@ -214,7 +208,7 @@ async function write(content, x = 20, y = 780, auto = true) {
 			switch (char) {
 				case '\n':
 					x = 20
-					y += 40
+					y += lineHeight
 					break
 				case '~':
 					style.strikethrough ^= 1
@@ -233,7 +227,8 @@ async function write(content, x = 20, y = 780, auto = true) {
 						input.y = y
 					}
 					text.ctx.fillStyle = 'black'
-					text.ctx.fillRect(x + 4, y + 4 + fontHeight, span, 3)
+					text.ctx.fillRect(x + 4, y + 4 + fontHeight,
+						span, 3)
 					text.ctx.fillStyle = 'white'
 					text.ctx.fillRect(x, y + fontHeight, span, 3)
 					render()
@@ -243,9 +238,11 @@ async function write(content, x = 20, y = 780, auto = true) {
 					text.ctx.strokeText(char, x, y)
 					text.ctx.fillText(char, x, y)
 					if (style.strikethrough)
-						text.ctx.fillRect(x, y + fontHeight / 3, fontWidth, 3)
+						text.ctx.fillRect(x, y + fontHeight / 3,
+							fontWidth, 3)
 					if (style.underline)
-						text.ctx.fillRect(x, y + fontHeight, fontWidth, 3)
+						text.ctx.fillRect(x, y + fontHeight,
+							fontWidth, 3)
 
 					render()
 					x += fontWidth
@@ -264,11 +261,9 @@ async function render() {
 	glCanvas.draw(combined.texture).bulgePinch(w / 2, h / 2, w * 3 / 4,
 			0.25)
 		.vignette(0.25, 0.7)
-		//.lensBlur(0.2,1,0)
 		.brightnessContrast(0.1, 0.1)
 		.update()
 }
-async function clearInput(){
-
-						input.element.value = ''
+async function clearInput() {
+	input.element.value = ''
 }
