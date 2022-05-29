@@ -17,9 +17,10 @@ Andre the",,andre,,Andre,SA,,Buy0,,,,
 Buy0,"Before leaving Arcadia you should buy equipment and supplies. You have $_Money in cash, but you don't have to spend it all now.",,suitcases,,,,Buy1,,,,,
 Buy1,You can buy whatever you need at Paul's Lost and Found.,desk,paul,,,,Buy2,,,,,
 Buy2,"Hello, I'm Paul and I want to find every object in my Lost 'n' Found a new owner.",desk,paul,,,,Buy3,,,,,
-Buy3,"Some may accuse me of being ""heartless"", ""unethical"", or God-forbid, ""immoral"". But you know what's the answer to every question in the world?",desk,paul,,,SA,,Buy4,,,,
-Buy4,"That's right. So I heard you're going across America! I can fix you up with what you need:
-1. Water bottle, very sturdy, lightly used: $5.00
+Buy3,"Some may accuse my sale tatics of being ""heartless"", ""unethical"", or God-forbid, ""immoral"". But you know what's the answer to every question in the world?",desk,paul,,,SA,,Buy4,,,,
+Buy4,That's goddamn right. ,desk,paul,,,,Buy5,,,,,
+Buy5,"So! I heard you're going across America! Here, I've just what you need.",desk,paul,,,,Buy6,,,,,
+Buy6,"1. Water bottle, very sturdy, lightly used: $5.00
 2. Nathan's food, without cheese: $25.00
 3. Keys to the schoolbus: $99.00",desk,paul,,,PURCHASE,Steal0,,5,25,99,
 Steal0,"You spot a schoolbus sitting on Campus Drive.
@@ -30,19 +31,28 @@ Steal1,"The keys work! You all hop on the schoolbus.
 2. Not not drive the schoolbus",road,bus,,,MC,,,Autocracy,Autocracy,,
 Autocracy,"Xing wants to go to Yosemite, but everyone else wants to go to Las Vegas.
 1. Support Xing's autocracy
-2. What the heck is an autocracy",road,map,,,MC,,,YosemiteTrip1,Depart,,
+2. What the heck is an autocracy",road,map,,,MC,,,YosemiteTrip0,Depart,,
 Depart,"An autocracy is a system of government where one person holds all the power.
 1. Ok sounds good. I trust Xing.
-2. Nah too totalitarian for me. let's go to Las Vegas.",road,map,,,MC,,,YosemiteTrip1,VegasTrip0,,
+2. Nah too totalitarian for me. let's go to Las Vegas.",road,map,,,MC,,,YosemiteTrip0,FauxTrip0,,
 ,,,,,,,,,,,,
-VegasTrip0,You embark on your journey to Las Vegas!,,bus,,,TRIP,VegasTrip1,,,,,
-,Xing thanks Eisenhower for the Interstate Highway System.,,bus,,,,,,,,,
-,You pass through California's Central Valley,,bus,,,TRIP,,,,,,
-VegasTrip1,There is an accident ahead. Your journey will take 3 more days.,,bus,,,TRIP,VegasTrip2,,,,,
-VegasTrip2,Might as well go to Yosemite?,,bus,,,TRIP,YosemiteTrip0,,,,,
+FauxTrip0,You embark on your journey to Las Vegas!,,bus,,,TRIP,FauxTrip1,,,,,
+FauxTrip1,"Smooth going so far as you leave the edges of the city.
+1. Thank Eisenhower for the Interstate Highway System.
+2. Curse Eisenhower for increasing federal spending via the Interstate Highway System.",,,,,MC,,,FauxTrip2,FauxTrip2,,
+FauxTrip2,Darnit Ike! There is a ten-mile traffic jam up ahead. Your journey will take 3 more days.,,bus,,,TRIP,FauxTrip3,,,,,
+FauxTrip3,You watch your life crawl by as your schoolbus crawls across the Mojave Desert.,,bus,,,TRIP,FauxTrip4,,,,,
+FauxTrip4,"This is so boring, Vritti would rather be at William Henry Harrison's inaugural address.",,bus,,,TRIP,FauxTrip5,,,,,
+FauxTrip5,"At last, you spot an exit sign that leads you north. Xing suggests, maybe it was better to go to Yosemite first after all?
+1. Agree with Xing. After all, totalitarian leaders tend to gain power in times of popular discontent, and it's bad to be an enemy of the powerful.
+2. No, endure the traffic just a little longer.",,bus,,,MC,,,YosemiteTrip0,FauxTrip6,,
+FauxTrip6,You bake in the Californian summer sun as you stand alone against going to Las Vegas.,,,,,TRIP,FauxTrip7,,,,,
+FauxTrip7,"Finally, after three more hours in traffic, you concede the debate. You take the next exit north. You're now on your way to Yosemite.",,,,,TRIP,YosemiteTrip0,,,,,
 YosemiteTrip0,You embark on your journey to Yosemite!,,bus,,,TRIP,YosemiteTrip1,,,,,
-YosemiteTrip1,You embark on your journey to Yosemite!,,bus,,,TRIP,YosemiteTrip2,,,,,
-YosemiteTrip2,You arrive at Yosemite National Park.,,bus,,,TRIP,,,Yosemite0,,,
+YosemiteTrip1,"Heading north, you enter California's Central Valley.",,bus,,,TRIP,YosemiteTrip2,,,,,
+YosemiteTrip2,You pass by vast stretches of farmland. Xing's started hallucinating Cesar Chavez protesting outside the window.,,,,,TRIP,YosemiteTrip3,,,,,
+YosemiteTrip3,You try Nathan's food but it tastes bad without cheese.,,,,,TRIP,YosemiteTrip4,,,,,
+YosemiteTrip4,"Finally, after 5 hours, you arrive at Yosemite National Park.",,bus,,,TRIP,Yosemite0,,Yosemite0,,,
 ,,,,,,,,,,,,
 Yosemite0,"You see a trail towards the mountains, and some deer roaming around.
 1. Start hiking up the trail
