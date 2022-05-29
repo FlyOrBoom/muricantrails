@@ -20,7 +20,7 @@ Buy an item: ${dash}
 }
 
 const v = {
-	Version: '2022.05.27.1',
+	Version: '2022.05.28.1',
 	Money: 1600,
 	Items: {}
 }
