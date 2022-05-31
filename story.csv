@@ -93,17 +93,17 @@ Vegas1,"The hotel sounds like a reasonable option, but this casino promises to t
 Casino0,"You and Vritti boldly walk into the casino. To enter the main room, you have to go through a digital age verification.
 1. This is too challenging. Just check into the hotel.
 2. There's got to be a way to bypass this.",vegas,,,,MC,,,Vegas2,Casino1,,
-Casino1,"Instead of using their Secure Age Verification Browser, you open their age verifier in a regular tab. Now, with the power of Inspect Element, you change your birthdays to July 14, 1789. You smirk at your genius.",,,,,,Casino2,,,,,
-Casino2,"But too soon! You get caught by Security Officer Raul Fring. He shoves you out from the casino, back to the Strip.",,,,,,Casino3,,,,,
-Casino3,"It's 1 am, and you can't think of any other pseudolegal activites to do, so you check into the Bellagio Hotel and try to sleep.",,,,,,Vegas3,,,,,
-Vegas2,You check into the Bellagio Hotel and try to sleep.,,,,,,Vegas3,,,,,
-Vegas3,"Try as hard as you can, but you can't sleep. The environment, the excitement of Vegas is simply too much to bear-- or is it just the hunger of not having eaten a proper dinner in days? Regardless, you abandon sleep for a buffet to fill your stomach.",,,,,,Vegas4,,,,,
-Vegas4,[Insert food description here],,,,,,Vegas5,,,,,
+Casino1,"Instead of using their Secure Age Verification Browser, you open their age verifier in a regular tab. Now, with the power of Inspect Element, you change your birthdays to July 14, 1789. You smirk at your genius.",vegas,,,,,Casino2,,,,,
+Casino2,"But too soon! You get caught by Security Officer Raul Fring. He shoves you out from the casino, back to the Strip.",vegas,,,,,Casino3,,,,,
+Casino3,"It's 1 am, and you can't think of any other pseudolegal activites to do, so you check into the Bellagio Hotel and try to sleep.",vegas,,,,,Vegas3,,,,,
+Vegas2,You check into the Bellagio Hotel and try to sleep.,vegas,,,,,Vegas3,,,,,
+Vegas3,"Try as hard as you can, but you can't sleep. The environment, the excitement of Vegas is simply too much to bear-- or is it just the hunger of not having eaten a proper dinner in days? Regardless, you abandon sleep for a buffet to fill your stomach.",vegas,,,,,Vegas4,,,,,
+Vegas4,[Insert food description here],vegas,,,,,Vegas5,,,,,
 Vegas5,"While eating, Andre's hands let slip a teapot and breaks it! An employee confronts him and he blames it on you. What will you do?
 1. Run! Run while you can!!
-2. Offer to pay the employee hush money.",,,,,,Vegas6,,Consequence,Consequence,,
-Vegas6,"To no avail, you get caught by security and they kick you out. Your name will forever be attached to this teapot scandal.",,,,,,Vegas7,,,,,
-Vegas7,"After getting kicked out of the buffet, you decide to buy tickets to a David Copperfield Magic Show. David Copperfied is very good at magic. You have fun.",,,,,,Vegas8,,,,,
+2. Offer to pay the employee hush money.",vegas,,,,,Vegas6,,Consequence,Consequence,,
+Vegas6,"To no avail, you get caught by security and they kick you out. Your name will forever be attached to this teapot scandal.",vegas,,,,,Vegas7,,,,,
+Vegas7,"After getting kicked out of the buffet, you decide to buy tickets to a David Copperfield Magic Show. David Copperfied is very good at magic. You have fun.",vegas,,,,,Vegas8,,,,,
 Vegas8,It's been a long night. You return to the hotel and go to sleep at sunrise.,,,,,,Vegas9,,,,,
 ,,,,,,,,,,,,
 Vegas9,"Waking at sunset, Andre the _Andre suddenly remembers he has a family at Salt Lake City. Though the journey will take two days, it might be good to go there, in case his family forgets about him.",,,,,TRIP,UtahTrip0,,,,,
@@ -129,16 +129,16 @@ UtahEnd,Utah is so hot this time of year! Even the night is hard to bear. Some p
 SeattleTrip0,You remember how Bezos is really rich and his company is somewhere north.,mojave,busWest,,,TRIP,SeattleTrip1,,,,,
 SeattleTrip1,"So you start for Seattle, Washington.",mojave,busWest,,,TRIP,SeattleTrip2,,,,,
 SeattleTrip2,"Driving northwest, you try to race the Sun.",mojave,busWest,,,TRIP,SeattleTrip3,,,,,
-SeattleTrip3,It was futile. The journey still took two days.,mojave,busWest,,,TRIP,SeattleTrip4,,,,,
-SeattleTrip4,"At Seattle, you park the bus underneath the Space Needle.",spaceneedle,busWest,,,TRIP,Seattle0,,,,,
+SeattleTrip3,It was futile. The journey still took two days.,seattleNight,busWest,,,TRIP,SeattleTrip4,,,,,
+SeattleTrip4,"At Seattle, you park the bus underneath the Space Needle.",seattleNight,,,,TRIP,Seattle0,,,,,
 ,,,,,,,,,,,,
-Seattle0,Everyone decides they want to go to the top of the Space Needle. You pay the entrance fee and take the elevator to the top.,spaceneedle,,,,,Seattle1,,,,,
+Seattle0,Everyone decides they want to go to the top of the Space Needle. You pay the entrance fee and take the elevator to the top.,seattleDay,,,,,Seattle1,,,,,
 Seattle1,"You take in the view of the Seattle cityscape. You can see Mt. Whittier in the distance. It starts getting windy. Do you want to go down?
 1. Yes
-2. No",spaceneedle,,,,MC,,,Seattle2,Seattle3,,
-Seattle2,You descend the Space Needle. It's lunch time and you're hungry. The Pike Place Market sounds like a good place to get food.,spaceneedle,,,,,Seattle4,,,,,
-Seattle3,"You stay at the top of the Space Needle for a little longer, but it's lunch time and you start to get hungry, so you descend. The Pike Place Market sounds like a good place to get food.",spaceneedle,,,,,Seattle4,,,,,
-Seattle4,"You arrive at Pike Place Market. You see some fish being thrown around, but the group eventually decides they want Thai food. You go to Jasmine Thai Restaurant and enjoy some authentic thai food.",market,,,,,Seattle5,,,,,
+2. No",seattleDay,,,,MC,,,Seattle2,Seattle3,,
+Seattle2,You descend the Space Needle. It's lunch time and you're hungry. The Pike Place Market sounds like a good place to get food.,seattleDay,,,,,Seattle4,,,,,
+Seattle3,"You stay at the top of the Space Needle for a little longer, but it's lunch time and you start to get hungry, so you descend. The Pike Place Market sounds like a good place to get food.",seattleDay,,,,,Seattle4,,,,,
+Seattle4,"You arrive at Pike Place Market. You see some fish being thrown around, but the group eventually decides they want Thai food. You go to Jasmine Thai Restaurant and enjoy some authentic thai food.",seattleDay,,,,,Seattle5,,,,,
 Seattle5,"Before you leave for the Midwest, Yingjia suggests stocking up some more supplies.
 1. Go to some boring grocery store
 2. Go to the Amazon grocery store",market,,jeffreybezos,,MC,Seattle6,,Seattle6,Seattle7,,
@@ -156,7 +156,7 @@ MallTrip0,"A 3-day drive on the I-90 takes you across the Great Plains. No buffa
 Mall0,"You get to the Mall of America in Bloomington, Minnesota! What is the first thing you want to do? 
 1. Go get Jojo Siwa Merch!! 
 2. Go on fun rollercoasters ",mall,bus,,,MC,,,JojoSiwa,Rollercoaster,,
-JojoSiwa,You go buy Jojo Siwa merchandise. Now everyone has their own sparkly bows. Very pretty.,jojo,,,,,,,,,,
+JojoSiwa,You go buy Jojo Siwa merchandise. Now everyone has their own sparkly bows. Very pretty.,jojoSiwa,,,,,,,,,,
 Rollercoaster,"You go on one of the rollercoasters. It was fun, but after getting off rollercoaster, Xing throws up in a nearby trash can due to nausea. Guess you can't go on any more rides.",rollercoaster,,,,,,,,,,
 ,"Everyone else, on the other hand, is very hungry. Luckily, there's a lot of Nickolodeon-inspired food at the Nickelodeon Universe. You enjoy a burger and milkshake before returning to the schoolbus for your next stop.",,,,,,,,,,,
 ,,,,,,,,,,,,
@@ -302,12 +302,16 @@ DisneyLunch,"You decide it's time for lunch. You are starting to feel a little h
 ,You finish the entire turkey leg by yourself. You're full. Maybe a bit too fu--you throw up in a nearby trash can. Perhaps you should've thought about sharing that turkey leg. You suppose these are the consequences of greed.,,,,,,,,,,,
 ,"After throwing up, you're a little worse for wear. Are you up to going on more rides?
 1. Yes
-2. No",,,,,,,,Ride0,Ride1,,
-Ride0,,,,,,,,,,,,
-Ride1,,,,,,,,,,,,
-,"disneyworld, universal, kennedy space center",,,,,,,,,,,
-,,,,,,,,,,,,
-,END,,,,,,,,,,,
+2. No",,,,,,,,Ride0,Stop0,,
+Ride0,"Although you've just thrown up, you're determined to go on more rides--you can't just waste all that money you spent on tickets. Splash Mountain is suggested, and suddenly you feel a bit more nauseous, but you stomach those feelings and decide to go anyways.",,,,,,,,,,,
+Ride1,"You go on Splash Mountain, and you start feeling a little better right before it's your turn. However, the ride starts moving and suddenly you're nauseous again. You end up throwing up (again) on the ride--all over the stranger sitting next to you. How embarrassing.",,,,,,,,,,,
+Ride2,"The ride concludes to the end, and your friends hastily apologize to the stranger because you're still too busy dry heaving in a nearby trash can. Maybe you shouldn't have gone on Splash Mountain after all.",,,,,,,,,,,
+Stop0,"You decide to listen to your body--you still don't feel very well. You sit out on the next few rides. You're a little disappointed that you couldn't go on the rides, but you eventually start feeling better. At least you didn't embarrass yourself by throwing up all over someone, right?",,,,,,,,,,,
+,"By now, the sun has set, and in it's place, the moon. There's a fireworks show starting soon, so you and the others rush toward Main Street early to get a good view. Luckily, you land a spot right in front, where there aren't any abnormally tall people to obscure your vision.",,,,,,,,,,,
+,"The fireworks begin, and you can't help but be in awe of the fantastic showcase. As the light illuminates your face, you reminisce of your summer adventure. It's been a fun several months, travelling all over the United States. You've met a lot of new people, eaten a lot of new food, and most importantly, you've learned a lot more--about America and yourself.",,,,,,,,,,,
+,"However, your senior year does happen to start in a week.",,,,,,,,,,,
+,It's time for you to return home--to Arcadia.,,,,,,,,,,,
+,THE END,,,,,,,,,,,
 ,,,,,,,,,,,,
 ,,,,,,,,,,,,
 ,,,,,,,,,,,,
