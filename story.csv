@@ -58,7 +58,7 @@ YosemiteTrip4,"Finally, after 5 hours, you arrive at Yosemite National Park.",yo
 ,,,,,,,,,,,,
 Yosemite0,"You see a trail towards the mountains, and some deer roaming around.
 1. Start hiking up the trail
-2. Chase the deers",yosemiteDay,,,,MC,,,Trail,Deer,,
+2. Chase the deers",yosemiteDay,,summer,,MC,,,Trail,Deer,,
 Trail,"While hiking, you come across Yosemite Falls. It's very beautiful and you feel at peace. Is this what Thoreau felt like?",yosemiteEvening,,,,,YosemiteSleep,,,,,
 Deer,You start chasing around the deers and find yourself at Yosemite Falls. It's very beautiful and you feel at peace. Is this what Thoreau felt like?,yosemiteEvening,,,,,YosemiteSleep,,,,,
 YosemiteSleep,"You return to the campsite as the sun sets and you start a fire. You enjoy some canned refried beans, potatoes, and s'mores before you tuck in for the night.",yosemiteNight,,,,,Mountain0,,,,,
@@ -73,7 +73,7 @@ Guilt3,"Luckily, he just limped back to the bus.",yosemiteEvening,,,,,YosemiteEn
 ,,,,,,,,,,,,
 YosemiteEnd,"Great. Now everyone's sick of Yosemite. Wanna go chill at Las Vegas?
 1. Heck yeah!
-2. What about someplace else?",yosemiteEvening,,,,MC,,,VegasTrip0,Hijack0,,
+2. What about someplace else?",yosemiteEvening,,livinonaprayer,,MC,,,VegasTrip0,Hijack0,,
 Hijack0,"Alright, we'll go to Not Las Vegas then.",mojave,bus,,,TRIP,Hijack1,,,,,
 Hijack1,"Your supplies are slowly dwindling as you head towards Not Las Vegas, and so does Xing's sanity.",mojave,bus,,,TRIP,Hijack2,,,,,
 Hijack2,"""You know how in old novels, fictional places often have blank names like L|           | instead of ones invented by the author? Yeah, Jane Eyre had a hint of Choose Your Own Adventure in it.""",mojave,bus,,,TRIP,Hijack3,,,,,
@@ -86,7 +86,7 @@ VegasTrip3,Vast stretches of wilderness are only scantily interrupted by small t
 VegasTrip4,"That is, until the Sun sets, and you start to make out a galaxy of lights that lay in the distance: The city that never sleeps.",mojave,bus,,,TRIP,VegasTrip5,,,,,
 VegasTrip5,"At long last, a quarter to midnight, you arrive at Vegas. Though violet clouds cover up the sky, neon signs illuminate the night.",vegas,bus,,,,Vegas0,,,,,
 ,,,,,,,,,,,,
-Vegas0,"Stepping out from the schoolbus, you've stepped onto the Las Vegas Strip. Aisles of bright buildings tower over your periphery. To your right, the Bellagio Hotel; To your left, a grand casino.",vegas,bus,,,,Vegas1,,,,,
+Vegas0,"Stepping out from the schoolbus, you've stepped onto the Las Vegas Strip. Aisles of bright buildings tower over your periphery. To your right, the Bellagio Hotel; To your left, a grand casino.",vegas,bus,uptowngirl,,,Vegas1,,,,,
 Vegas1,"The hotel sounds like a reasonable option, but this casino promises to turn your money into far more wealth.
 1. Unfortunately, you're too young to gamble away your fortunes. Just check into the hotel.
 2. Fortunately, you can lie.",vegas,,,,MC,,,Vegas2,Casino0,,
@@ -106,7 +106,7 @@ Vegas6,"To no avail, you get caught by security and they kick you out. Your name
 Vegas7,"After getting kicked out of the buffet, you decide to buy tickets to a David Copperfield Magic Show. David Copperfied is very good at magic. You have fun.",vegas,,,,,Vegas8,,,,,
 Vegas8,It's been a long night. You return to the hotel and go to sleep at sunrise.,,,,,,Vegas9,,,,,
 ,,,,,,,,,,,,
-Vegas9,"Waking at sunset, Andre the _Andre suddenly remembers he has a family at Salt Lake City. Though the journey will take two days, it might be good to go there, in case his family forgets about him.",,,,,TRIP,UtahTrip0,,,,,
+Vegas9,"Waking at sunset, Andre the _Andre suddenly remembers he has a family at Salt Lake City. Though the journey will take two days, it might be good to go there, in case his family forgets about him.",,,dontstopbelievin,,TRIP,UtahTrip0,,,,,
 UtahTrip0,"So you get on the desert road again, driving under twilight towards the Utah border.",,bus,,,TRIP,UtahTrip1,,,,,
 UtahTrip1,"There really is nothing to see in a desert at night. You rest til dawn, then start driving again.",,bus,,,TRIP,UtahTrip2,,,,,
 UtahTrip2,"After six hundred miles, you finally reach the Great Salt Lake in the afternoon.",,bus,,,TRIP,Utah0,,,,,
