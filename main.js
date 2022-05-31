@@ -244,7 +244,6 @@ async function write(content, x = 20, y = 790, auto = true) {
 						span, 3)
 					text.ctx.fillStyle = 'white'
 					text.ctx.fillRect(x, y + fontHeight, span, 3)
-					render()
 					x += span
 					break
 				default:
@@ -256,11 +255,10 @@ async function write(content, x = 20, y = 790, auto = true) {
 					if (style.underline)
 						text.ctx.fillRect(x, y + fontHeight,
 							fontWidth, 3)
-
-					render()
 					x += fontWidth
 			}
-		}, i * 20 * auto)
+			if(!auto || i%2 || i == string.length - 1) render()
+		}, i * 15 * auto)
 	}
 
 }
