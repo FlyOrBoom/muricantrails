@@ -1,4 +1,5 @@
 let data
+let audio = new Audio()
 const dash = '\t'.repeat(8)
 const endings = {
 	'MC': `
@@ -102,7 +103,11 @@ async function show(_id) {
 	//console.log(id, data[id], choices)
 	image.background.src = `media/${background}.png`
 	image.foreground.src = `media/${foreground}.png`
-	if (music) new Audio(`media/${music}.mp3`).play()
+	if (music) {
+		audio.pause()
+		audio = new Audio(`media/${music}.mp3`)
+		audio.play()
+	}
 	prompt += endings[type]
 	write(prompt)
 }
