@@ -20,7 +20,7 @@ Buy an item: ${dash}
 }
 
 const v = {
-	Version: '2022.05.28.1',
+	Version: '2022.05.30.1',
 	Money: 1600,
 	Items: {}
 }
@@ -31,7 +31,8 @@ const fontHeight = 18
 const lineHeight = 35
 
 
-let id, prompt, background, foreground, type, music, variable, space, short, choices
+let id, prompt, background, foreground, type, music, variable, space, short,
+	choices
 
 let counter = 0
 
@@ -94,7 +95,9 @@ async function show(_id) {
 	image.ctx.clearRect(0, 0, w, h)
 	image.ctx.fillStyle = '#000'
 	image.ctx.fillRect(0, 0, w, h);
-	[prompt, background, foreground, music, variable, type, space, short, ...choices] =
+	[prompt, background, foreground, music, variable, type, space, short,
+		...choices
+	] =
 	data[id]
 	//console.log(id, data[id], choices)
 	image.background.src = `media/${background}.png`
@@ -104,11 +107,11 @@ async function show(_id) {
 	write(prompt)
 }
 
-async function drawBackground(){
+async function drawBackground() {
 	image.ctx.drawImage(image.background, 0, 0, w, h)
 	render()
 }
-async function drawForeground(){
+async function drawForeground() {
 	image.ctx.drawImage(image.foreground, 0, 0, w, h)
 	render()
 }
@@ -127,11 +130,11 @@ async function main() {
 
 	image.background.addEventListener('load', drawBackground)
 	image.foreground.addEventListener('load', () => {
-		setTimeout(drawForeground,100)
-		setTimeout(drawBackground,200)
-		setTimeout(drawForeground,300)
-		setTimeout(drawBackground,400)
-		setTimeout(drawForeground,500)
+		setTimeout(drawForeground, 100)
+		setTimeout(drawBackground, 200)
+		setTimeout(drawForeground, 300)
+		setTimeout(drawBackground, 400)
+		setTimeout(drawForeground, 500)
 	})
 
 	const fontFace = new FontFace('pressstart', 'url(media/pressstart.ttf)')
@@ -144,7 +147,7 @@ async function main() {
 main()
 
 async function clickListener() {
-	enterListener({
+	inputListener({
 		key: ' '
 	})
 }
@@ -153,7 +156,6 @@ async function enterListener({
 }) {
 	//text.ctx.clearRect(input.x, input.y, fontWidth * 16, fontHeight)
 
-	if (key == ' ' && space) show(space)
 
 	if (key == 'Enter') {
 
@@ -188,6 +190,7 @@ async function enterListener({
 async function inputListener({
 	data
 }) {
+	if (data == ' ' && space) show(space)
 	if (!input.x && !input.y) return;
 	text.ctx.clearRect(input.x, input.y, fontWidth * 16, fontHeight)
 	write(input.element.value, input.x, input.y, false)
@@ -271,7 +274,7 @@ async function render() {
 	glCanvas.draw(combined.texture).bulgePinch(w / 2, h / 2, w * 3 / 4,
 			0.2)
 		.vignette(0.25, 0.7)
-		.brightnessContrast(0.1, 0.1)
+		//.brightnessContrast(0.1, 0.1)
 		.update()
 }
 async function clearInput() {
