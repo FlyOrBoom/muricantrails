@@ -5,7 +5,7 @@ Title,,title,,wedidntstartthefire,,,Role,,,,,
 Role,"Many kinds of people have done a road trip across America. You may:
 1. Be a middling history student with illusions of grandeur
 2. ~Be a recent graduate ready to gamble~ AGE RESTRICTED
-3. ~Be but a humble public school teacher~ AGE RESTRICTED",,,,MainCharacter,MC,,,Vritti,,,
+3. ~Be but a humble public school teacher~ AGE RESTRICTED",,,,MainCharacter,MC,,,Buy,,,
 Buy,"Before leaving Arcadia you should buy equipment and supplies. You have $_Money in cash, but you don't have to spend it all now.",,suitcases,,,,Buy1,,,,,
 Buy1,You can buy whatever you need at Paul's Lost and Found.,desk,paul,,,,Buy2,,,,,
 Buy2,"""Hello, I'm Paul and I want to find every object in my Lost 'n' Found a new owner.",desk,paul,,,,Buy3,,,,,
