@@ -21,7 +21,7 @@ Buy an item: ${dash}
 }
 
 const v = {
-	Version: '2022.05.30.2',
+	Version: '2022.05.31.2',
 	Money: 1600,
 	Items: {}
 }
@@ -166,24 +166,26 @@ async function enterListener({
 
 		if (variable) v[variable] = input.element.value
 
-		if (short) {
+		if (short) { 
 			show(short)
+		} else if (space && !choices[0]) {
+			show(space)
 		} else {
 			const num = parseInt(input.element.value) - 1
 			if (choices[num]) {
 				if (type == 'PURCHASE') {
 					if (v.Money >= choices[num]) {
 						v.Money -= choices[num]
-						write(("YOU BOUGHT ONE ITEM.\n" + prompt))
+						write(("YOU BOUGHT ONE ITEM.\n" + prompt),5)
 					} else {
 						write(("YOU DON'T HAVE THE MONEY FOR THAT. PICK ANOTHER OR LEAVE MY STORE.\n" +
-							prompt))
+							prompt),5)
 					}
 				} else {
 					show(choices[num])
 				}
 			} else {
-				write('INVALID OPTION. PICK ANOTHER.\n' + prompt)
+				write('INVALID OPTION. PICK ANOTHER.\n' + prompt,5)
 			}
 		}
 		//if(item in v.items) variables.items[item]++
@@ -198,10 +200,10 @@ async function inputListener({
 	if (data == ' ' && space) show(space)
 	if (!input.x && !input.y) return;
 	text.ctx.clearRect(input.x, input.y, fontWidth * 16, fontHeight)
-	write(input.element.value, input.x, input.y, false)
+	write(input.element.value, 0, input.x, input.y)
 }
 
-async function write(content, x = 20, y = 790, auto = true) {
+async function write(content, interval = 15, x = 20, y = 790) {
 	let style = {
 		italic: false,
 		bold: false,
@@ -210,7 +212,7 @@ async function write(content, x = 20, y = 790, auto = true) {
 	}
 	let string = format(content)
 
-	if (auto) {
+	if (interval) {
 		counter++
 		y -= string.split('\n').length * lineHeight
 		clearInput()
@@ -262,8 +264,8 @@ async function write(content, x = 20, y = 790, auto = true) {
 							fontWidth, 3)
 					x += fontWidth
 			}
-			if(!auto || i%2 || i == string.length - 1) render()
-		}, i * 15 * auto)
+			if(!interval || i%2 || i == string.length - 1) render()
+		}, i * interval)
 	}
 
 }
