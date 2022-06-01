@@ -182,7 +182,7 @@ Navy4,"Where would you like to go to next?
 2. The Cloud Gate bean
 3. Back to the school bus",chicagoNight,,,,MC,,,ChicagoRiver,Bean,ChicagoBack,
 ChicagoBack,"After a long day, you finally decide to go back to the bus to drive back to your hotel for the night--the luxurious Waldorf Astoria. The second you enter your room, you pass out on your bed, ready to get some sleep for the next day.",chicagoNight,,,,,ChicagoEnd,,,,,
-ChicagoEnd,You awake the next day and start packing your belongings for your next destination--Niagra Falls.,chicagoNight,bus,eyeofthetiger,,,Niagara,,,,,
+ChicagoEnd,You awake the next day and start packing your belongings for your next destination--Niagara Falls.,chicagoNight,bus,eyeofthetiger,,,Niagara,,,,,
 ,,,,,,,,,,,,
 Niagara,"After taking in the view at the top of Niagara Falls, what do you want to do?
 1. Take a boat trip underneath the Falls
@@ -194,12 +194,12 @@ Cave1,"Unfortunately, it wasn't quite what you expected and you weren't even in 
 NiagaraHotel,"You decide to look for a hotel, now that the sun is setting. Unlike the times of Brooker T. Washington, the U.S. side of the falls no longer have segregated hotels. What will you do?
 1. Book a hotel on the American side
 2. Move to Canada (for 1 night)",niagaraEvening,,,,MC,,,AmericanSide,CanadianSide,,
-AmericanSide,"You decide to book rooms at Seneca Niagra Resort! Maybe if Elizabeth Stanton was still alive today, she would've liked gambling at the casino.",niagaraEvening,,,,,AmericanSide1,,,,,
+AmericanSide,"You decide to book rooms at Seneca Niagara Resort! Maybe if Elizabeth Stanton was still alive today, she would've liked gambling at the casino.",niagaraEvening,,,,,AmericanSide1,,,,,
 AmericanSide1,"Unfortunately for you, you're underage and cannot gamble. Instead, you go to a restauraunt and enjoy a piping hot meal consisting of New York Strip Steak. Then, you return to your room to rest for the night.",niagaraEvening,,,,,NiagaraEnd,,,,,
 CanadianSide,"You decide to book rooms at the Woodbourne Inn, a restored 19th century house situated in Ontario, on the Canadian side of Niagara Falls. As the house transports you back into the 1800s, you're served a plate of poutine.",niagaraEvening,,,,,CanadianSide,,,,,
 CanadianSide1,"You've never tried gravy on fries, but apparently it's a famous Canadian dish. To your surprise, it ends up being quite tasty and you enjoy your meal. Then, you return to your room to rest for the night.",niagaraEvening,bus,,,,NiagaraEnd,,,,,
 ,,,,,,,,,,,,
-NiagaraEnd,It's morning in Niagara Falls. Time for our next stop: Boston!,niagaraDay,bus,herecomesthesun,,TRIP,,,,,,
+NiagaraEnd,It's morning in Niagara Falls. Time for our next stop: Boston!,niagaraDay,bus,herecomesthesun,,TRIP,Boston,,,,,
 ,,,,,,,,,,,,
 Boston,"Boston is a very noisy place. Fortunately for you, that also means there's a lot of things to do.",bostonDay,bus,,,,Tea,,,,,
 Tea,"First, Yingjia wants to recreate the Boston Tea Party! It was illegal in 1773, but if you buy your own tea, it should be fine, right? What kind of tea do you want to buy?
