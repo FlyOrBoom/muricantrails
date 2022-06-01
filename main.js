@@ -21,7 +21,7 @@ Buy an item: ${dash}
 }
 
 const v = {
-	Version: '2022.05.31.2',
+	Version: '2022.05.31.4',
 	Money: 1600,
 	Items: {}
 }

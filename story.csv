@@ -6,14 +6,6 @@ Role,"Many kinds of people have done a road trip across America. You may:
 1. Be a middling history student with illusions of grandeur
 2. ~Be a recent graduate ready to gamble~ AGE RESTRICTED
 3. ~Be but a humble public school teacher~ AGE RESTRICTED",,,,MainCharacter,MC,,,Vritti,,,
-Vritti,"What is the nickname of the first leader?
-Vritti the",,vritti,,Vritti,SA,,Yingjia,,,,
-Yingjia,"What is the nickname of the second in command?
-Yingjia the",,yingjia,,Yingjia,SA,,Xing,,,,
-Xing,"What is the nickname of the third wheel?
-Xing the",,xing,,Xing,SA,,Andre,,,,
-Andre,"What is the nickname of the fourth student?
-Andre the",,andre,,Andre,SA,,Buy,,,,
 Buy,"Before leaving Arcadia you should buy equipment and supplies. You have $_Money in cash, but you don't have to spend it all now.",,suitcases,,,,Buy1,,,,,
 Buy1,You can buy whatever you need at Paul's Lost and Found.,desk,paul,,,,Buy2,,,,,
 Buy2,"""Hello, I'm Paul and I want to find every object in my Lost 'n' Found a new owner.",desk,paul,,,,Buy3,,,,,
@@ -27,7 +19,7 @@ Buy6,"1. Water bottle, very sturdy, lightly used: $5.00
 Buy7,You leave Paul's Lost and Found for the road.,desk,paul,,,,Steal,,,,,
 Steal,"You spot a schoolbus sitting on Campus Drive.
 1. Try your keys on the schoolbus.
-2. Give Vritti the _Vritti your keys to try on the schoolbus.",road,bus,teamamerica,,MC,,,Steal1,Steal1,,
+2. Give Vritti your keys to try on the schoolbus.",road,bus,teamamerica,,MC,,,Steal1,Steal1,,
 Steal1,"The keys work! You all hop on the schoolbus.
 1. Drive the schoolbus
 2. Not not drive the schoolbus",road,bus,,,MC,,,Autocracy,Autocracy,,
@@ -95,7 +87,7 @@ Casino2,"But too soon! You get caught by Security Officer Raul Fring. He shoves 
 Casino3,"It's 1 am, and you can't think of any other pseudolegal activites to do, so you check into the Bellagio Hotel and try to sleep.",vegas,,,,,Vegas3,,,,,
 Vegas2,You check into the Bellagio Hotel and try to sleep.,vegas,,,,,Vegas3,,,,,
 Vegas3,"Try as hard as you can, but you can't sleep. The environment, the excitement of Vegas is simply too much to bear-- or is it just the hunger of not having eaten a proper dinner in days? Regardless, you and your friends abandon sleep for a buffet to fill your stomach.",vegas,,,,,Vegas4,,,,,
-Vegas4,"Xing the _Xing found some shrimp chow mein and was satisfied. Andre the _Andre got biscuits and tea. What do you want to eat?
+Vegas4,"Xing found some shrimp chow mein and was satisfied. Andre got biscuits and tea. What do you want to eat?
 1. Gold leaf coated truffle, $1000.00
 2. Glass of water, $10.00
 3. Literal plastic poker chip, $1.00",vegas,,,,PURCHASE,Vegas5,,1000,10,1,
@@ -106,7 +98,7 @@ Vegas6,"To no avail, you get caught by security and they kick you out. Your name
 Vegas7,"After getting kicked out of the buffet, you decide to buy tickets to a David Copperfield Magic Show. David Copperfied is very good at magic. You have fun.",vegas,,,,,Vegas8,,,,,
 Vegas8,It's been a long night. You return to the hotel and go to sleep at sunrise.,,,,,,Vegas9,,,,,
 ,,,,,,,,,,,,
-Vegas9,"Waking at sunset, Andre the _Andre suddenly remembers he has a family at Salt Lake City. Though the journey will take two days, it might be good to go there, in case his family forgets about him.",,,dontstopbelievin,,TRIP,UtahTrip,,,,,
+Vegas9,"Waking at sunset, Andre suddenly remembers he has a family at Salt Lake City. Though the journey will take two days, it might be good to go there, in case his family forgets about him.",,,dontstopbelievin,,TRIP,UtahTrip,,,,,
 UtahTrip,"So you get on the desert road again, driving under twilight towards the Utah border.",,bus,,,TRIP,UtahTrip1,,,,,
 UtahTrip1,"There really is nothing to see in a desert at night. You rest til dawn, then start driving again.",,bus,,,TRIP,UtahTrip2,,,,,
 UtahTrip2,"After six hundred miles, you finally reach the Great Salt Lake in the afternoon.",utahDay,bus,,,TRIP,Utah,,,,,
@@ -119,7 +111,7 @@ Salt,"You take a walk to the lake. Pelicans are resting by the banks. You wonder
 Salt1,"Tasting the extreme salinity of the water, you suddenly thought of something evil to do.
 1. Do it. You are become Death, destroyer of worlds.
 2. Oh God please don't.",utahEvil,,,,MC,,,Salt2,Salt3,,
-Salt2,You run back to the bus. Everyone is still asleep. You take Vritti the _Vritti's water bottle and run it over with the lake's water.,utahEvening,,,,,Salt3,,,,,
+Salt2,You run back to the bus. Everyone is still asleep. You take Vritti's water bottle and run it over with the lake's water.,utahEvening,,,,,Salt3,,,,,
 Salt3,"You walk back to the bus, as if not one deviant thought had ever came across your mind.",utahEvening,,,,,Utah2,,,,,
 Wedding,Andre had fallen asleep during most of the wedding but he definently enjoyed the food. ,utahEvening,,,,,Wedding1,,,,,
 Wedding1, Andre was super embarrased for showing up without a suit but his cousin didn't mind and was happy for his attendence.,utahEvening,,,,,Utah2,,,,,
@@ -139,7 +131,7 @@ Seattle1,"You take in the view of the Seattle cityscape. You can see Mt. Whittie
 Seattle2,"You descend the Space Needle. It's lunch time and you're hungry. The Pike Place, a massive local farmers' market, sounds like a good place to get food.",seattleDay,,,,,Seattle4,,,,,
 Seattle3,"You stay at the top of the Space Needle for a little longer, but it's lunch time and you start to get hungry, so you descend. The Pike Place Market sounds like a good place to get food.",seattleDay,,,,,Seattle4,,,,,
 Seattle4,"You arrive at Pike Place Market. You see some fish being thrown around, but the group eventually decides they want Thai food. You go to Jasmine Thai Restaurant and enjoy some authentic thai food.",seattleDay,,,,,Seattle5,,,,,
-Seattle5,"Before you leave for the Midwest, Yingjia the _Yingjia suggests stocking up some more supplies.
+Seattle5,"Before you leave for the Midwest, Yingjia suggests stocking up some more supplies.
 1. Go to some boring grocery store
 2. Go to the Amazon grocery store",market,,jeffreybezos,,MC,Seattle6,,Seattle6,Seattle7,,
 Seattle6,"Nobody else wants to go to a boring grocery store. You end up going to the Amazon grocery store anyways.
@@ -210,7 +202,7 @@ CanadianSide1,"You've never tried gravy on fries, but apparently it's a famous C
 NiagaraEnd,It's morning in Niagara Falls. Time for our next stop: Boston!,niagaraDay,bus,herecomesthesun,,TRIP,,,,,,
 ,,,,,,,,,,,,
 Boston,"Boston is a very noisy place. Fortunately for you, that also means there's a lot of things to do.",bostonDay,bus,,,,Tea,,,,,
-Tea,"First, Yingjia the _Yingjia wants to recreate the Boston Tea Party! It was illegal in 1773, but if you buy your own tea, it should be fine, right? What kind of tea do you want to buy?
+Tea,"First, Yingjia wants to recreate the Boston Tea Party! It was illegal in 1773, but if you buy your own tea, it should be fine, right? What kind of tea do you want to buy?
 1. Gourmet tea imported from Britain: $10,000.00
 2. Cheap Lipton ice tea from Quincy Market $1.0",bostonDay,,,,PURCHASE,Tea1,,1000,1,,
 Tea1,"You buy the tea before walking to Boston Harbor. At the edge of the dock, you pour your cup of the tea into the ocean. Take that Parliament! The Sons of Liberty would've been proud.",bostonDay,,,,,RedSox,,,,,
@@ -252,7 +244,7 @@ MoMa2,"You look around for a little longer, before Vritti suggests it's time to 
 1. Statue of Liberty
 2. 9/11 Memorial and the One World Trade Center
 3. Back to the school bus",nyc,,,,MC,,,Statue,911,NYCBack,
-NYCBack,You're on your way back to the school when--oh no! Andre the _Andre gets struck by a speeding taxi cab driver.,nyc,,,,,NYCChase,,,,,
+NYCBack,You're on your way back to the school when--oh no! Andre gets struck by a speeding taxi cab driver.,nyc,,,,,NYCChase,,,,,
 NYCChase,"You try to run after the driver to give them a piece of your mind, but you quickly lose them in the bustling traffic of New York City. You're angry, but Andre is in need of medical attention. ",nyc,,,,,NYCChase1,,,,,
 NYCChase1,"You rush him to a hospital, and luckily, he's not seriously hurt, but it looks like your time in New York City will be cut short. That sucks--maybe next time you'll be able to enjoy a more thorough tour of the city that never sleeps.",nyc,,,,,NYCEnd,,,,,
 NYCEnd,"You settle into your seat on the school bus, and now it's time to go to Philadelphia!",nyc,bus,,,TRIP,Philly,,,,,
