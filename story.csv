@@ -261,25 +261,25 @@ PhillyEnd,"After a long day of sight-seeing, you check into the Rittenhouse Hote
 ,,,,,,,,,,,,
 Washington,"Going down the coast, you arrive at the District of Columbia, driving right into Lafayette Park, where below the calm skies reign chants of protest.
 1. Join the protest.
-2. Go somewhere else.",white house,,starspangledbanner,,MC,,,Protest,Protest,,
-Protest,"You're not really sure what the protest is about, but you join it anyway because it might look good on your college essay.",white house,,,,,Protest1,,,,,
-Protest1,"You follow the flow of the crowd towards the White House. It took some walking, but eventually you reach the home of Joe.",white house,,,,,Protest2,,,,,
+2. Go somewhere else.",whitehouse,,starspangledbanner,,MC,,,Protest,Protest,,
+Protest,"You're not really sure what the protest is about, but you join it anyway because it might look good on your college essay.",whitehouse,,,,,Protest1,,,,,
+Protest1,"You follow the flow of the crowd towards the White House. It took some walking, but eventually you reach the home of Joe.",whitehouse,,,,,Protest2,,,,,
 Protest2,"You see Joe standing at the patio, sunglasses donned.
 1. Don a pair of sunglasses in reciprocation.
-2. Loudly air your grievances from a distance.",white house,,,,MC,,,ProtestEnd,Protest3,,
-Protest3,"Joe tries to make out what you are saying, but to tell the truth he can't hear much this far away.",white house,,,,,Protest4,,,,,
+2. Loudly air your grievances from a distance.",whitehouse,,,,MC,,,ProtestEnd,Protest3,,
+Protest3,"Joe tries to make out what you are saying, but to tell the truth he can't hear much this far away.",whitehouse,,,,,Protest4,,,,,
 Protest4,"Still, he tells you nothing can be done because judging from your state of origin, the Republicans are probably against what you are saying.
 1. Sigh and go somewhere else.
-2. Keep shouting at him.",white house,,,,MC,,,ProtestEnd,Protest5,,
-Protest5,You keep shouting while the rest of the crowd gets bored and goes away. You keep shouting so long he capitulates and invites you all to dinner.,white house,,,,,ProtestEnd,,,,,
-ProtestEnd,"You eat dinner at the White House. Unfortunately, there is an infant formula shortage, so you can't have your favorite food, but you did get to have some nice tuna, salmon, and spaghetti.",joe biden,,,,,Monuments,,,,,
+2. Keep shouting at him.",whitehouse,,,,MC,,,ProtestEnd,Protest5,,
+Protest5,You keep shouting while the rest of the crowd gets bored and goes away. You keep shouting so long he capitulates and invites you all to dinner.,whitehouse,,,,,ProtestEnd,,,,,
+ProtestEnd,"You eat dinner at the White House. Unfortunately, there is an infant formula shortage, so you can't have your favorite food, but you did get to have some nice tuna, salmon, and spaghetti.",joe,,,,,Monuments,,,,,
 Monuments,"Alright, you decide to look at some long dead people instead. First stop: Lincoln Memorial.",lincoln,,,,,Monuments1,,,,,
 Monuments1,"There was actually a competing proposal to build a log cabin as his memorial instead, but the plan of enshrining the man in gargantuan marble ended up winning.",lincoln,,,,,Monuments2,,,,,
 Monuments2,"As you enter the building, Lincoln's eyes catches yours. He stares from a height a hundred times more imposing than Mr. Green. You feel threatened.
 1. Run.",lincoln,,,,,Monuments3,,,,,
 Monuments3,"You run straight back to the Washington Monument. The towering obelisk is even more remniscent of the towering figure of Mr. Green.
-1. Run.",washington monument,,,,,Monuments4,,,,,
-Monuments4,You run to the White House for shelter. Joe lets you in and invites your companions to supper.,white house,,,,,Orlando,,,,,
+1. Run.",obelisk,,,,,Monuments4,,,,,
+Monuments4,You run to the White House for shelter. Joe lets you in and invites your companions to supper.,whitehouse,,,,,Orlando,,,,,
 ,,,,,,,,,,,,
 Orlando,"After your very professional visit to the White House, it's finally time to let loose. In fact, it's nearly time for your road trip to come to an end, but before that, you have one last stop to make: Orlando!",,bus,lifeisahighway,,,Orlando1,,,,,
 Orlando1,"You've always wanted to go to Disneyworld. Of course, there's a Disneyland in your very own home-state of California, but obviously, they aren't the same. It seems like everybody else is excited to go to Disneyworld too.",disneyday,,,,,Orlando2,,,,,
@@ -314,8 +314,12 @@ Conclusion,"The fireworks begin, and you can't help but be in awe of the fantast
 Conclusion1,"However, your senior year does happen to start in a week.",disneyfireworks,,,,,Conclusion2,,,,,
 Conclusion2,It's time for you to return home--to Arcadia.,disneyfireworks,,,,,Conclusion3,,,,,
 Conclusion3,THE END,,,,,,Credits,,,,,
-Credits,"Project by Vritti, Yingjia, Xing and Andre
+Credits,"MURICAN TRAILS _Version
+|Play it at muricantrails.github.io|
+
+An APUSH project by Vritti, Yingjia, Xing and Andre
 Written (mostly) by Yingjia
-Programmed and illustrated by Xing
+Programmed and illustrated (mostly) by Xing
+
 Computer screen (Unsplash stock photo) by PJ Gal-Szabo
-Music (illegally) by Billy Joel, Bo Burnham, Joe Hisaishi, Bon Jovie, Journey, The Beatles, and The Eagles",,,,,,,,,,,
+Music (illegally) by Billy Joel, Bo Burnham, Joe Hisaishi, Bon Jovie, Toto, Journey, Electronic Ligth Orchestra, The Beatles, and The Eagles",,,,,,,,,,,
