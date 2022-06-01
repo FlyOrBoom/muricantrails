@@ -69,14 +69,14 @@ VegasTrip5,"At long last, a quarter to midnight, you arrive at Paradise, Nevada.
 VegasTrip6,"""But it looks just like Las Vegas!""",vegas,bus,,,TRIP,VegasTrip7,,,,,
 VegasTrip7,"Exactly, Paradise is an unincorporated town next to Las Vegas, created to escape from the Las Vegas city government. MUNICIPAL LAWS CAN'T STOP YOU NOW!!",vegas,bus,,,TRIP,Vegas,,,,,
 ,,,,,,,,,,,,
-Vegas,"Stepping out from the schoolbus, you've stepped onto the Las Vegas Strip. Aisles of bright buildings tower over your periphery. To your right, a sparkling Bellagio Hotel; To your left, the Luxor Las Vegas pyramid casino.",vegas,bus,uptowngirl,,,Vegas1,,,,,
+Vegas,"Stepping out from the schoolbus, you've stepped onto the Las Vegas Strip. Aisles of bright buildings tower over your periphery. To your right, a sparkling Bellagio Hotel; To your left, the Luxor Las Vegas pyramid casino.",vegas,,uptowngirl,,,Vegas1,,,,,
 Vegas1,"The hotel sounds like a reasonable option, but this casino promises to turn your money into far more wealth.",vegas,,,,,Casino2,,,,,
 Casino,"You and Vritti boldly walk into the casino. To enter the main room, you have to go through a digital age verification.
 1. This is too challenging. Just check into the hotel.
 2. There's got to be a way to bypass this.",vegas,,,,MC,,,Vegas2,Casino1,,
 Casino1,"Instead of using their Secure Age Verification Browser, you open their age verifier in a regular tab. Now, with the power of Inspect Element, you change your birthdays to July 14, 1789. You smirk at your genius.",vegas,,,,,Casino2,,,,,
 Casino2,"But too soon! You get caught by Security Officer Raul Fring. He shoves you out from the casino, back to the Strip.",vegas,,,,,Casino3,,,,,
-Casino3,"It's 1 am, and you can't think of any other pseudolegal activites to do, so you check into the Bellagio Hotel and try to sleep.",vegas,,,,,Vegas3,,,,,
+Casino3,"It's 1 AM, and you can't think of any other pseudolegal activites to do, so you check into the Bellagio Hotel and try to sleep.",vegas,,,,,Vegas3,,,,,
 Vegas2,You check into the Bellagio Hotel and try to sleep.,vegas,,,,,Vegas3,,,,,
 Vegas3,"Try as hard as you can, but you can't sleep. The environment, the excitement of Vegas is simply too much to bear-- or is it just the hunger of not having eaten a proper dinner in days? Regardless, you and your friends abandon sleep for a buffet to fill your stomach.",vegas,,,,,Vegas4,,,,,
 Vegas4,"Xing found some shrimp chow mein and was satisfied. Andre got biscuits and tea. What do you want to eat?
@@ -110,9 +110,9 @@ Wedding1, Andre was super embarrased for showing up without a suit but his cousi
 Utah2,"Andre returned later that night with loads of food he borrowed from the wedding: three cakes, two pizzas, and a local Crown Burger.",utahEvening,bus,,,,UtahEnd,,,,,
 ,,,,,,,,,,,,
 UtahEnd,Utah is so hot this time of year! Even the night is hard to bear. Some place up north might be better.,utahEvening,busWest,,,TRIP,SeattleTrip,,,,,
-SeattleTrip,The thought of Las Vegas money made you dream of being a billionaire. Maybe you should ask one to see how they did it. You remember that time when Bezos asked for your number and you gave it to him. You decide to pay the bald man a visit.,mojave,busWest,jeffreybezos,,TRIP,SeattleTrip1,,,,,
-SeattleTrip1,"So you start for Seattle, Washington.",mojave,busWest,livinonaprayer,,TRIP,SeattleTrip2,,,,,
-SeattleTrip2,"Driving northwest, you try to race the Sun.",mojave,busWest,,,TRIP,SeattleTrip3,,,,,
+SeattleTrip,The thought of Las Vegas money made you dream of becoming a billionaire.,mojave,busWest,jeffreybezos,,TRIP,SeattleTrip1,,,,,
+SeattleTrip1,You remember that time when you gave Bezos your number. Maybe you should go ask him how he did it.,mojave,busWest,,,TRIP,SeattleTrip2,,,,,
+SeattleTrip2,"So you start for Seattle, Washington. Driving northwest, you try to race the Sun.",mojave,busWest,livinonaprayer,,TRIP,SeattleTrip3,,,,,
 SeattleTrip3,It was futile. The journey still took two days.,seattleNight,busWest,,,TRIP,SeattleTrip4,,,,,
 SeattleTrip4,"At Seattle, you park the bus underneath the Space Needle, a giant Needle pointing at Space. Really, it was built during a World Fair so people can go and point at the ground.",seattleNight,,,,TRIP,Seattle,,,,,
 ,,,,,,,,,,,,
@@ -147,8 +147,8 @@ MallEnd,"Everyone else, on the other hand, is very hungry. Luckily, there's a lo
 Chicago,Chicago!!!,chicago,bus,,,,Chicago1,,,,,
 Chicago1,"You finally arrive in Chicago! There's many things to do in Chicago, but perhaps you'd like something to eat first? And what else would you eat in Chicago than the famous Chicago-styled deep dish pizza?",chicagoDay,bus,,,,Chicago2,,,,,
 Chicago2,"In your APUSH class, you vaguely remember Mr. Green mentioning a pizza place named Giordano's.",chicagoDay,,,,,Chicago3,,,,,
-Chicago3,"You head there and once you settle into a table, the entire group orders a large deep dish pizza to share.",chicagoDay,,,,,Chicago4,,,,,
-Chicago4,"It's quite different from the other pizzas you've tried, namely because you can't really see any cheese on the surface of the pizza. However, you are pleasantly surprised to taste the cheese at the bottom of the pie once you bite in.",chicagoDay,,,,,Chicago5,,,,,
+Chicago3,"You head there and once you settle into a table, the entire group orders a large deep dish pizza to share.",,chicagoPizza,,,,Chicago4,,,,,
+Chicago4,"It's quite different from the other pizzas you've tried, namely because you can't really see any cheese on the surface of the pizza. However, you are pleasantly surprised to taste the cheese at the bottom of the pie once you bite in.",,chicagoPizza,,,,Chicago5,,,,,
 Chicago5,"After finishing your meal, it's time to explore the streets of Chicago. Where would you like to go first?
 1. Take a boat tour of the Chicago River
 2. Visit the famous Cloud Gate (aka the Bean)
@@ -159,8 +159,8 @@ ChicagoRiver2,"Where would you like to go to next?
 1. The Cloud Gate bean
 2. The Navy Pier
 3. Back to the school bus",chicagoEvening,,,,MC,,,Bean,Navy,ChicagoBack,
-Bean,"You decide to visit the Cloud Gate monument, or more commonly referred to, the Bean. It's very shiny, and in the reflection you can see the Chicago skyline, as well as much of the sky.",chicagoEvening,,,,,Bean1,,,,,
-Bean1,"After all, it was named ""the Cloud Gate"" because it reflected so much of the sky. But besides from taking pictures, there's not much else to do at the Bean.",chicagoEvening,,,,,Bean2,,,,,
+Bean,"You decide to visit the Cloud Gate monument, or more commonly referred to, the Bean. It's very shiny, and in the reflection you can see the Chicago skyline, as well as much of the sky.",,bean,,,,Bean1,,,,,
+Bean1,"After all, it was named ""the Cloud Gate"" because it reflected so much of the sky. But besides from taking pictures, there's not much else to do at the Bean.",,bean,,,,Bean2,,,,,
 Bean2,"Where would you like to go to next?
 1. The Chicago River tour
 2. The Navy Pier
@@ -210,28 +210,29 @@ JFK,"You decide the last stop in your Boston trip will be the John F Kennedy pre
 JFK1,"At the museum, there are many statues, paintings, and other artifacts, but you couldn't help but also notice the amount of clothes displayed that used to belong to First Lady Jacqueline Kennedy. She must've been a real fashionista. ",bostonNight,,,,,JFK2,,,,,
 JFK2,"You conclude your browsing of the JFK museum. You've felt like you've learned a lot, but now you're tired. Perhaps you should rest up on the bus ride to New York City.",bostonNight,bus,,,,NYC,,,,,
 ,,,,,,,,,,,,
-NYC,"You drive into New York City and try to look for a parking space for your schoolbus. It's very crowded, and after 10 hours of searching, you gave up and decided to park in Central Park. Now everyone's hungry. What should we eat?
+NYC,"You drive into New York City and try to look for a parking space for your schoolbus. It's very crowded, and after 10 hours of searching, you give up and decide to park in Central Park, an 800-acre greenscape in the middle of the city.",nyc,bus,allstar,,,NYC1,,,,,
+NYC1,"Everyone's starving for non-Nathaned food now. What should we eat?
 1. New York Style Pizza
-2. Street Hot Dogs",nyc,bus,allstar,,MC,,,NYPizza,NYHotDog,,
-NYPizza,"You've heard New York is very famous for their pizza. Apparently city water gives the pizza crust special characteristics? Nonetheless, you're eager to try.",nyc,,,,,NYC1,,,,,
-NYHotDog,"Are you kidding? You're in New York City and you want to eat hot dogs??? Everybody else wanted to try the pizza, and since the country runs on a democracy, it's too bad for you.",nyc,,,,,NYC1,,,,,
-NYC1,"After a fulfilling meal composed of pizza and a drink of your choice, it's time to go sightseeing! There are many historical monuments in the city of New York. Where do you want to go first?
+2. Street Hot Dogs",nyc,nyPizza,,,MC,,,NYPizza,NYHotDog,,
+NYPizza,"You've heard New York is very famous for their pizza. Apparently city water gives the pizza crust special characteristics? Nonetheless, you're eager to try.",nyc,,,,,NYC2,,,,,
+NYHotDog,"Are you kidding? You're in New York City and you want to eat hot dogs??? Everybody else wanted to try the pizza, and since the country runs on a democracy, it's too bad for you.",nyc,,,,,NYC2,,,,,
+NYC2,"After a fulfilling meal composed of pizza and a drink of your choice, it's time to go sightseeing! There are many historical monuments in the city of New York. Where do you want to go first?
 1. Statue of Liberty
 2. 9/11 Memorial and the One World Trade Center
 3. Museum of Modern Art",nyc,,,,MC,,,Statue,911,MoMA,
-Statue,"You take a ferry to the Statue of Liberty. Arriving at the base of the statue, you realize that it's very large. A guide informs you that you'd have to trek up 162 stairs to make it to the top, but you're always up for a challenge, aren't you?",statue of liberty,,,,,Statue1,,,,,
-Statue1," Once you make it to the top, you're exhausted, but the view is breathtaking. Another guide tells you that the Statue of Liberty was a gift from the French during the Gilded Age.",statue of liberty,,,,,Statue2,,,,,
+Statue,"You take a ferry to the Statue of Liberty. Arriving at the base of the statue, you realize that it's very large. A guide informs you that you'd have to trek up 162 stairs to make it to the top, but you're always up for a challenge, aren't you?",liberty,,,,,Statue1,,,,,
+Statue1," Once you make it to the top, you're exhausted, but the view is breathtaking. Another guide tells you that the Statue of Liberty was a gift from the French during the Gilded Age.",liberty,,,,,Statue2,,,,,
 Statue2,"After enjoying the view for a little longer, Yingjia decides it's time to visit another location. Where would you like to go next?
 1. 9/11 Memorial and the One World Trade Center
 2. Museum of Modern Art
-3. Back to the school bus",statue of liberty,,,,MC,,,911,MoMA,NYCEnd,
-911,"You go to the 9/11 Memorial, where you can see two large, square-shaped holes in the ground--footprints of the Twin Towers that were destroyed in the 9/11 tragedy. You buy a bouquet of flowers and pay your respects to those killed in the attack.",nyc,,,,,9111,,,,,
+3. Back to the school bus",liberty,,,,MC,,,911,MoMA,NYCEnd,
+911,"You go to the 9/11 Memorial, where you can see two large, square-shaped holes in the ground--footprints of the Twin Towers that were destroyed in the 9/11 tragedy. You buy a bouquet of flowers and pay your respects to those killed in the attack.",,twin,,,,9111,,,,,
 9111,"After looking around a little more, Xing decides it's time to move on. Where would you like to go next?
 1. Statue of Liberty
 2. Museum of Modern Art
 3. Back to the school bus",nyc,,,,MC,,,Statue,MoMA,NYCEnd,
 MoMA,"You enter the Museum of Modern Art and notice a lot of remarkable paintings as you walk around. There's work from Salvador Dalí, Frida Kahlo, Pablo Picasso, Vincent Van Gough, and the sorts.",nyc,,,,,MoMa1,,,,,
-MoMa1,You even stop in front of a painting of Marilyn Monroe by Andy Warhol and vaguely remember hearing the name 'Marilyn Monroe' in your APUSH class. Was she an actress?,nyc,,,,,MoMa2,,,,,
+MoMa1,You even stop in front of a painting of Marilyn Monroe by Andy Warhol and vaguely remember hearing the name 'Marilyn Monroe' in your APUSH class. Was she an actress?,nyc,marilyn,,,,MoMa2,,,,,
 MoMa2,"You look around for a little longer, before Vritti suggests it's time to leave for another location. Where would you like to go next?
 1. Statue of Liberty
 2. 9/11 Memorial and the One World Trade Center
@@ -261,25 +262,25 @@ PhillyEnd,"After a long day of sight-seeing, you check into the Rittenhouse Hote
 ,,,,,,,,,,,,
 Washington,"Going down the coast, you arrive at the District of Columbia, driving right into Lafayette Park, where below the calm skies reign chants of protest.
 1. Join the protest.
-2. Go somewhere else.",whitehouse,,starspangledbanner,,MC,,,Protest,Protest,,
-Protest,"You're not really sure what the protest is about, but you join it anyway because it might look good on your college essay.",whitehouse,,,,,Protest1,,,,,
-Protest1,"You follow the flow of the crowd towards the White House. It took some walking, but eventually you reach the home of Joe.",whitehouse,,,,,Protest2,,,,,
+2. Go somewhere else.",lafayette,,starspangledbanner,,MC,,,Protest,Protest,,
+Protest,"You're not really sure what the protest is about, but you join it anyway because it might look good on your college essay.",lafayette,,,,,Protest1,,,,,
+Protest1,"You follow the flow of the crowd towards the White House. It took some walking, but eventually you reach the home of Joe.",lafayette,,,,,Protest2,,,,,
 Protest2,"You see Joe standing at the patio, sunglasses donned.
 1. Don a pair of sunglasses in reciprocation.
-2. Loudly air your grievances from a distance.",whitehouse,,,,MC,,,ProtestEnd,Protest3,,
-Protest3,"Joe tries to make out what you are saying, but to tell the truth he can't hear much this far away.",whitehouse,,,,,Protest4,,,,,
+2. Loudly air your grievances from a distance.",,joe,,,MC,,,ProtestEnd,Protest3,,
+Protest3,"Joe tries to make out what you are saying, but to tell the truth he can't hear much this far away.",,joe,,,,Protest4,,,,,
 Protest4,"Still, he tells you nothing can be done because judging from your state of origin, the Republicans are probably against what you are saying.
 1. Sigh and go somewhere else.
-2. Keep shouting at him.",whitehouse,,,,MC,,,ProtestEnd,Protest5,,
-Protest5,You keep shouting while the rest of the crowd gets bored and goes away. You keep shouting so long he capitulates and invites you all to dinner.,whitehouse,,,,,ProtestEnd,,,,,
-ProtestEnd,"You eat dinner at the White House. Unfortunately, there is an infant formula shortage, so you can't have your favorite food, but you did get to have some nice tuna, salmon, and spaghetti.",joe,,,,,Monuments,,,,,
+2. Keep shouting at him.",,joe,,,MC,,,ProtestEnd,Protest5,,
+Protest5,You keep shouting while the rest of the crowd gets bored and goes away. You keep shouting so long he capitulates and invites you all to dinner.,,joe,,,,ProtestEnd,,,,,
+ProtestEnd,"You eat dinner at the White House. Unfortunately, there is an infant formula shortage, so you can't have your favorite food, but you did get to have some nice tuna, salmon, and spaghetti.",,joe,,,,Monuments,,,,,
 Monuments,"Alright, you decide to look at some long dead people instead. First stop: Lincoln Memorial.",lincoln,,,,,Monuments1,,,,,
 Monuments1,"There was actually a competing proposal to build a log cabin as his memorial instead, but the plan of enshrining the man in gargantuan marble ended up winning.",lincoln,,,,,Monuments2,,,,,
 Monuments2,"As you enter the building, Lincoln's eyes catches yours. He stares from a height a hundred times more imposing than Mr. Green. You feel threatened.
 1. Run.",lincoln,,,,,Monuments3,,,,,
 Monuments3,"You run straight back to the Washington Monument. The towering obelisk is even more remniscent of the towering figure of Mr. Green.
 1. Run.",obelisk,,,,,Monuments4,,,,,
-Monuments4,You run to the White House for shelter. Joe lets you in and invites your companions to supper.,whitehouse,,,,,Orlando,,,,,
+Monuments4,You run to the White House for shelter. Joe lets you in and invites your companions to supper.,lafayette,,,,,Orlando,,,,,
 ,,,,,,,,,,,,
 Orlando,"After your very professional visit to the White House, it's finally time to let loose. In fact, it's nearly time for your road trip to come to an end, but before that, you have one last stop to make: Orlando!",,bus,lifeisahighway,,,Orlando1,,,,,
 Orlando1,"You've always wanted to go to Disneyworld. Of course, there's a Disneyland in your very own home-state of California, but obviously, they aren't the same. It seems like everybody else is excited to go to Disneyworld too.",disneyday,,,,,Orlando2,,,,,
