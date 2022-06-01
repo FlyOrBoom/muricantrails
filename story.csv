@@ -3,15 +3,15 @@ Begin,"MURICAN TRAILS _Version
 An APUSH project by Vritti, Yingjia, Xing, and Andre",,,,,,Title,,,,,
 Title,,title,,wedidntstartthefire,,,Role,,,,,
 Role,"Many kinds of people have done a road trip across America. You may:
-1. Be a middling history student with illusions of grandeur
+1. Be a history student with four friends and mild illusions of grandeur
 2. ~Be a recent graduate ready to gamble~ AGE RESTRICTED
 3. ~Be but a humble public school teacher~ AGE RESTRICTED",,,,MainCharacter,MC,,,Buy,,,
 Buy,"Before leaving Arcadia you should buy equipment and supplies. You have $_Money in cash, but you don't have to spend it all now.",,suitcases,,,,Buy1,,,,,
 Buy1,You can buy whatever you need at Paul's Lost and Found.,desk,paul,,,,Buy2,,,,,
-Buy2,"""Hello, I'm Paul and I want to find every object in my Lost 'n' Found a new owner.",desk,paul,,,,Buy3,,,,,
-Buy3,"""Some may accuse my sale tactics of being 'heartless', 'unethical', or God-forbid, 'immoral'. But you know what's the answer to every question in the world?
+Buy2,"""Hello, I'm Paul and I want to find every object in my Lost 'n' Found a new owner.""",desk,paul,,,,Buy3,,,,,
+Buy3,"""Some may accuse my sale tactics of being 'heartless', 'unethical', or God-forbid, 'immoral'. But you know what's the answer to every question in the world?""
 ",desk,paul,,,SA,,Buy4,,,,
-Buy4,"""That's goddamn right.",desk,paul,,,,Buy5,,,,,
+Buy4,"""That's goddamn right.""",desk,paul,,,,Buy5,,,,,
 Buy5,"""...So! I heard you're going across America! Here, I've just what you need.""",desk,paul,,,,Buy6,,,,,
 Buy6,"1. Water bottle, very sturdy, lightly used: $5.00
 2. Nathan's food, without cheese: $25.00
@@ -51,21 +51,15 @@ YosemiteTrip4,"Finally, after 5 hours, you arrive at Yosemite National Park. You
 Yosemite,"You see a trail towards the mountains, and some deer roaming around.
 1. Start hiking up the trail
 2. Chase the deers",yosemiteDay,,summer,,MC,,,Trail,Deer,,
-Trail,"While hiking, you come across Yosemite Falls. It's very beautiful and you feel at peace. Is this what Thoreau felt like?",yosemiteEvening,,,,,YosemiteSleep,,,,,
-Deer,You start chasing around the deers and find yourself at Yosemite Falls. It's very beautiful and you feel at peace. Is this what Thoreau felt like?,yosemiteEvening,,,,,YosemiteSleep,,,,,
+Trail,"While hiking, you come across Yosemite Falls. It's very beautiful and you feel at peace. Is this what Thoreau felt like?",niagaraEvening,,,,,YosemiteSleep,,,,,
+Deer,You start chasing around the deers and find yourself at Yosemite Falls. It's very beautiful and you feel at peace. Is this what Thoreau felt like?,niagaraEvening,,,,,YosemiteSleep,,,,,
 YosemiteSleep,"You return to the campsite as the sun sets and you start a fire. You enjoy some canned refried beans, potatoes, and s'mores before you tuck in for the night.",yosemiteNight,,,,,Mountain,,,,,
 Mountain,"The next day dawns with the summit of El Capitan gleaming in sunlight. You start for the mountain, this time determined to reach it.",yosemiteDay,,,,,Mountain1,,,,,
-Mountain1,"Unfortunately, midway through your journey, Andre tripped on a pebble.
-1. Leave Andre to the wolves.
-2. Carry him back to the bus.",yosemiteDay,,,,MC,,,Guilt,YosemiteEnd,,
-Guilt,"You left him as a joke, but as you trek closer to the mountain, you start having second thoughts.",yosemiteDay,,,,,Guilt1,,,,,
-Guilt1,"Did you really value your own experience more than the safety of Andre? The guilt is piling up, becoming more than you could bear.",yosemiteDay,,,,,Guilt2,,,,,
-Guilt2,You run back to where you abandoned Andre. He isn't there.,yosemiteEvening,,,,,Guilt3,,,,,
-Guilt3,"Luckily, he just limped back to the bus.",yosemiteEvening,,,,,YosemiteEnd,,,,,
+Mountain1,"At the foot of the mountain, you marvel at the granite beast. Xing wants to climb it but that'll take him a week at the very least, especially in this summer heat. You hike back to the schoolbus, satisfied with what you have seen.",yosemiteEvening,,,,,YosemiteEnd,,,,,
 ,,,,,,,,,,,,
-YosemiteEnd,"Great. Now everyone's sick of Yosemite. Wanna go chill at Las Vegas?
+YosemiteEnd,"When you wake up, everyone's sick of Yosemite. Wanna go chill at Las Vegas?
 1. Heck yeah!
-2. What about someplace else?",yosemiteEvening,,hotelcalifornia,,MC,,,VegasTrip1,VegasTrip,,
+2. What about someplace else?",yosemiteDay,,hotelcalifornia,,MC,,,VegasTrip1,VegasTrip,,
 VegasTrip,"Alright, we'll go to Paradise, Nevada instead.",mojave,bus,,,TRIP,VegasTrip1,,,,,
 VegasTrip1,You start your journey southeast. The shadows of low-hanging clouds dance atop the Sierra Nevada mountains as you drive between stretches of roads light and dark.,mojave,bus,,,TRIP,VegasTrip2,,,,,
 VegasTrip2,"In two hours, you've crossed into Nevada. NEWSOM CAN'T STOP YOU NOW!!",mojave,bus,,,TRIP,VegasTrip3,,,,,
@@ -75,10 +69,8 @@ VegasTrip5,"At long last, a quarter to midnight, you arrive at Paradise, Nevada.
 VegasTrip6,"""But it looks just like Las Vegas!""",vegas,bus,,,TRIP,VegasTrip7,,,,,
 VegasTrip7,"Exactly, Paradise is an unincorporated town next to Las Vegas, created to escape from the Las Vegas city government. MUNICIPAL LAWS CAN'T STOP YOU NOW!!",vegas,bus,,,TRIP,Vegas,,,,,
 ,,,,,,,,,,,,
-Vegas,"Stepping out from the schoolbus, you've stepped onto the Las Vegas Strip. Aisles of bright buildings tower over your periphery. To your right, the Bellagio Hotel; To your left, a grand casino.",vegas,bus,uptowngirl,,,Vegas1,,,,,
-Vegas1,"The hotel sounds like a reasonable option, but this casino promises to turn your money into far more wealth.
-1. Unfortunately, you're too young to gamble away your fortunes. Just check into the hotel.
-2. Fortunately, you can lie.",vegas,,,,MC,,,Vegas2,Casino,,
+Vegas,"Stepping out from the schoolbus, you've stepped onto the Las Vegas Strip. Aisles of bright buildings tower over your periphery. To your right, a sparkling Bellagio Hotel; To your left, the Luxor Las Vegas pyramid casino.",vegas,bus,uptowngirl,,,Vegas1,,,,,
+Vegas1,"The hotel sounds like a reasonable option, but this casino promises to turn your money into far more wealth.",vegas,,,,,Casino2,,,,,
 Casino,"You and Vritti boldly walk into the casino. To enter the main room, you have to go through a digital age verification.
 1. This is too challenging. Just check into the hotel.
 2. There's got to be a way to bypass this.",vegas,,,,MC,,,Vegas2,Casino1,,
@@ -90,13 +82,13 @@ Vegas3,"Try as hard as you can, but you can't sleep. The environment, the excite
 Vegas4,"Xing found some shrimp chow mein and was satisfied. Andre got biscuits and tea. What do you want to eat?
 1. Gold leaf coated truffle, $1000.00
 2. Glass of water, $10.00
-3. Literal plastic poker chip, $1.00",vegas,,,,PURCHASE,Vegas5,,1000,10,1,
+3. Literal plastic poker chip, $1.00",vegas,,,,PURCHASE,Vegas7,,1000,10,1,
 Vegas5,"While eating, Andre's hands let slip a teapot and breaks it! An employee confronts him and he blames it on you. What will you do?
 1. Run! Run while you can!!
 2. Offer to pay the employee hush money.",vegas,,,,MC,,,Vegas6,Vegas6,,
 Vegas6,"To no avail, you get caught by security and they kick you out. Your name will forever be attached to this teapot scandal.",vegas,,,,,Vegas7,,,,,
-Vegas7,"After getting kicked out of the buffet, you decide to buy tickets to a David Copperfield Magic Show. David Copperfied is very good at magic. You have fun.",vegas,,,,,Vegas8,,,,,
-Vegas8,It's been a long night. You return to the hotel and go to sleep at sunrise.,,,,,,Vegas9,,,,,
+Vegas7,"After this odd meal, you decide to buy tickets to a David Copperfield Magic Show at the MGM Grand Hotel. David Copperfied is very good at magic. You have fun.",vegas,,,,,Vegas8,,,,,
+Vegas8,It's been a long night. You return to the Bellagio and go to sleep at sunrise.,,,,,,SeattleTrip,,,,,
 ,,,,,,,,,,,,
 Vegas9,"Waking at sunset, Andre suddenly remembers he has a family at Salt Lake City. Though the journey will take two days, it might be good to go there, in case his family forgets about him.",,,dontstopbelievin,,TRIP,UtahTrip,,,,,
 UtahTrip,"So you get on the desert road again, driving under twilight towards the Utah border.",,bus,,,TRIP,UtahTrip1,,,,,
@@ -117,9 +109,9 @@ Wedding,Andre had fallen asleep during most of the wedding but he definently enj
 Wedding1, Andre was super embarrased for showing up without a suit but his cousin didn't mind and was happy for his attendence.,utahEvening,,,,,Utah2,,,,,
 Utah2,"Andre returned later that night with loads of food he borrowed from the wedding: three cakes, two pizzas, and a local Crown Burger.",utahEvening,bus,,,,UtahEnd,,,,,
 ,,,,,,,,,,,,
-UtahEnd,Utah is so hot this time of year! Even the night is hard to bear. Some place up north might be better.,utahEvening,busWest,livinonaprayer,,TRIP,SeattleTrip,,,,,
-SeattleTrip,You remember how Bezos is really rich and his company is somewhere north.,mojave,busWest,,,TRIP,SeattleTrip1,,,,,
-SeattleTrip1,"So you start for Seattle, Washington.",mojave,busWest,,,TRIP,SeattleTrip2,,,,,
+UtahEnd,Utah is so hot this time of year! Even the night is hard to bear. Some place up north might be better.,utahEvening,busWest,,,TRIP,SeattleTrip,,,,,
+SeattleTrip,The thought of Las Vegas money made you dream of being a billionaire. Maybe you should ask one to see how they did it. You remember that time when Bezos asked for your number and you gave it to him. You decide to pay the bald man a visit.,mojave,busWest,jeffreybezos,,TRIP,SeattleTrip1,,,,,
+SeattleTrip1,"So you start for Seattle, Washington.",mojave,busWest,livinonaprayer,,TRIP,SeattleTrip2,,,,,
 SeattleTrip2,"Driving northwest, you try to race the Sun.",mojave,busWest,,,TRIP,SeattleTrip3,,,,,
 SeattleTrip3,It was futile. The journey still took two days.,seattleNight,busWest,,,TRIP,SeattleTrip4,,,,,
 SeattleTrip4,"At Seattle, you park the bus underneath the Space Needle, a giant Needle pointing at Space. Really, it was built during a World Fair so people can go and point at the ground.",seattleNight,,,,TRIP,Seattle,,,,,
@@ -130,7 +122,7 @@ Seattle1,"You take in the view of the Seattle cityscape. You can see Mt. Whittie
 2. No",seattleDay,,,,MC,,,Seattle2,Seattle3,,
 Seattle2,"You descend the Space Needle. It's lunch time and you're hungry. The Pike Place, a massive local farmers' market, sounds like a good place to get food.",seattleDay,,,,,Seattle4,,,,,
 Seattle3,"You stay at the top of the Space Needle for a little longer, but it's lunch time and you start to get hungry, so you descend. The Pike Place Market sounds like a good place to get food.",seattleDay,,,,,Seattle4,,,,,
-Seattle4,"You arrive at Pike Place Market. You see some fish being thrown around, but the group eventually decides they want Thai food. You go to Jasmine Thai Restaurant and enjoy some authentic thai food.",seattleDay,,,,,Seattle5,,,,,
+Seattle4,"You arrive at Pike Place Market. You see some fish being thrown around, but the group eventually decides they want Thai food. You go to Jasmine Thai Restaurant and enjoy some authentic thai food.",market,,,,,Seattle5,,,,,
 Seattle5,"Before you leave for the Midwest, Yingjia suggests stocking up some more supplies.
 1. Go to some boring grocery store
 2. Go to the Amazon grocery store",market,,jeffreybezos,,MC,Seattle6,,Seattle6,Seattle7,,
@@ -150,7 +142,7 @@ Mall,"You get to the Mall of America in Bloomington, Minnesota! It's the largest
 2. Go on fun rollercoasters??",mall,bus,,,MC,,,JojoSiwa,Rollercoaster,,
 JojoSiwa,You go buy Jojo Siwa merchandise. Now everyone has their own sparkly bows. Very pretty.,jojoSiwa,,,,,MallEnd,,,,,
 Rollercoaster,"You go on one of the rollercoasters. It was fun, but after getting off rollercoaster, Xing throws up in a nearby trash can due to nausea. Guess you can't go on any more rides.",rollercoaster,,,,,MallEnd,,,,,
-MallEnd,"Everyone else, on the other hand, is very hungry. Luckily, there's a lot of Nickolodeon-inspired food at the Nickelodeon Universe. You enjoy a burger and milkshake before returning to the schoolbus for your next stop, Chicago, Illinois!",,,,,,Chicago,,,,,
+MallEnd,"Everyone else, on the other hand, is very hungry. Luckily, there's a lot of Nickolodeon-inspired food at the Nickelodeon Universe. You enjoy a burger and milkshake before returning to the schoolbus for your next stop, Chicago, Illinois!",rollercoaster,,,,,Chicago,,,,,
 ,,,,,,,,,,,,
 Chicago,Chicago!!!,chicago,bus,,,,Chicago1,,,,,
 Chicago1,"You finally arrive in Chicago! There's many things to do in Chicago, but perhaps you'd like something to eat first? And what else would you eat in Chicago than the famous Chicago-styled deep dish pizza?",chicagoDay,bus,,,,Chicago2,,,,,
@@ -182,7 +174,7 @@ Navy4,"Where would you like to go to next?
 2. The Cloud Gate bean
 3. Back to the school bus",chicagoNight,,,,MC,,,ChicagoRiver,Bean,ChicagoBack,
 ChicagoBack,"After a long day, you finally decide to go back to the bus to drive back to your hotel for the night--the luxurious Waldorf Astoria. The second you enter your room, you pass out on your bed, ready to get some sleep for the next day.",chicagoNight,,,,,ChicagoEnd,,,,,
-ChicagoEnd,You awake the next day and start packing your belongings for your next destination--Niagara Falls.,chicagoNight,bus,eyeofthetiger,,,Niagara,,,,,
+ChicagoEnd,"You awake the next day and start packing your belongings for your next destination--Boston, Massachusetts!",chicagoNight,bus,eyeofthetiger,,,Boston,,,,,
 ,,,,,,,,,,,,
 Niagara,"After taking in the view at the top of Niagara Falls, what do you want to do?
 1. Take a boat trip underneath the Falls
@@ -227,100 +219,100 @@ NYC1,"After a fulfilling meal composed of pizza and a drink of your choice, it's
 1. Statue of Liberty
 2. 9/11 Memorial and the One World Trade Center
 3. Museum of Modern Art",nyc,,,,MC,,,Statue,911,MoMA,
-Statue,"You take a ferry to the Statue of Liberty. Arriving at the base of the statue, you realize that it's very large. A guide informs you that you'd have to trek up 162 stairs to make it to the top, but you're always up for a challenge, aren't you?",nyc,,,,,Statue1,,,,,
-Statue1," Once you make it to the top, you're exhausted, but the view is breathtaking. Another guide tells you that the Statue of Liberty was a gift from the French during the Gilded Age.",nyc,,,,,Statue2,,,,,
+Statue,"You take a ferry to the Statue of Liberty. Arriving at the base of the statue, you realize that it's very large. A guide informs you that you'd have to trek up 162 stairs to make it to the top, but you're always up for a challenge, aren't you?",statue of liberty,,,,,Statue1,,,,,
+Statue1," Once you make it to the top, you're exhausted, but the view is breathtaking. Another guide tells you that the Statue of Liberty was a gift from the French during the Gilded Age.",statue of liberty,,,,,Statue2,,,,,
 Statue2,"After enjoying the view for a little longer, Yingjia decides it's time to visit another location. Where would you like to go next?
 1. 9/11 Memorial and the One World Trade Center
 2. Museum of Modern Art
-3. Back to the school bus",nyc,,,,MC,,,911,MoMA,NYCBack,
+3. Back to the school bus",statue of liberty,,,,MC,,,911,MoMA,NYCEnd,
 911,"You go to the 9/11 Memorial, where you can see two large, square-shaped holes in the ground--footprints of the Twin Towers that were destroyed in the 9/11 tragedy. You buy a bouquet of flowers and pay your respects to those killed in the attack.",nyc,,,,,9111,,,,,
 9111,"After looking around a little more, Xing decides it's time to move on. Where would you like to go next?
 1. Statue of Liberty
 2. Museum of Modern Art
-3. Back to the school bus",nyc,,,,MC,,,Statue,MoMA,NYCBack,
+3. Back to the school bus",nyc,,,,MC,,,Statue,MoMA,NYCEnd,
 MoMA,"You enter the Museum of Modern Art and notice a lot of remarkable paintings as you walk around. There's work from Salvador Dalí, Frida Kahlo, Pablo Picasso, Vincent Van Gough, and the sorts.",nyc,,,,,MoMa1,,,,,
 MoMa1,You even stop in front of a painting of Marilyn Monroe by Andy Warhol and vaguely remember hearing the name 'Marilyn Monroe' in your APUSH class. Was she an actress?,nyc,,,,,MoMa2,,,,,
 MoMa2,"You look around for a little longer, before Vritti suggests it's time to leave for another location. Where would you like to go next?
 1. Statue of Liberty
 2. 9/11 Memorial and the One World Trade Center
-3. Back to the school bus",nyc,,,,MC,,,Statue,911,NYCBack,
+3. Back to the school bus",nyc,,,,MC,,,Statue,911,NYCEnd,
 NYCBack,You're on your way back to the school when--oh no! Andre gets struck by a speeding taxi cab driver.,nyc,,,,,NYCChase,,,,,
 NYCChase,"You try to run after the driver to give them a piece of your mind, but you quickly lose them in the bustling traffic of New York City. You're angry, but Andre is in need of medical attention. ",nyc,,,,,NYCChase1,,,,,
 NYCChase1,"You rush him to a hospital, and luckily, he's not seriously hurt, but it looks like your time in New York City will be cut short. That sucks--maybe next time you'll be able to enjoy a more thorough tour of the city that never sleeps.",nyc,,,,,NYCEnd,,,,,
-NYCEnd,"You settle into your seat on the school bus, and now it's time to go to Philadelphia!",nyc,bus,,,TRIP,Philly,,,,,
+NYCEnd,"You settle into your seat on the school bus, and now it's time to go to Washington!",nyc,bus,,,TRIP,Washington,,,,,
 ,,,,,,,,,,,,
-Philly,Philadelphia,,,,,,Philly1,,,,,
-Philly1,"You finally arrive at Philadelphia, Pennsylvania! After that long drive, you're pretty famished, so the next stop is to get something to eat.",,,,,,Philly2,,,,,
-Philly2,"Well, since you're in Philadelphia, you should finally get to try an authentic philly cheesesteak. As much as you love Charley's Philly Steaks at the Santa Anita Mall, you can't help but wonder what a philly cheesesteak from Philly will taste like.",,,,,,Philly3,,,,,
-Philly3,"You decide to go to John's Roast Pork. You're a little skeptical if a place with ""roast pork"" in its name can serve a good cheesesteak, but everybody's starving and there's no other choice. You order your cheesesteak and it turns out to be surprisingly delicious--not that you're complaining. Maybe you underestimated John a little. ",,,,,,Philly4,,,,,
-Philly4,"After everyone's done eating, you decide to get more in touch with American history. What better place to check out than where the very Declaration of Independence was adopted--Independence Hall?",,,,,,Philly5,,,,,
+Philly,Philadelphia,philly,,,,,Philly1,,,,,
+Philly1,"You finally arrive at Philadelphia, Pennsylvania! After that long drive, you're pretty famished, so the next stop is to get something to eat.",road,bus,,,,Philly2,,,,,
+Philly2,"Well, since you're in Philadelphia, you should finally get to try an authentic philly cheesesteak. As much as you love Charley's Philly Steaks at the Santa Anita Mall, you can't help but wonder what a philly cheesesteak from Philly will taste like.",philly cheese steak,,,,,Philly3,,,,,
+Philly3,"You decide to go to John's Roast Pork. You're a little skeptical if a place with ""roast pork"" in its name can serve a good cheesesteak, but everybody's starving and there's no other choice. You order your cheesesteak and it turns out to be surprisingly delicious--not that you're complaining. Maybe you underestimated John a little. ",philly cheese steak,,,,,Philly4,,,,,
+Philly4,"After everyone's done eating, you decide to get more in touch with American history. What better place to check out than where the very Declaration of Independence was adopted--Independence Hall?",independence hall,,,,,Philly5,,,,,
 Philly5,"You arrive at Independence Hall, and one of the first things you notice is a statue of our Founding Father, George Washington, at the front. You want to get a picture, but it's a little awkward standing next to the pedestal while Washington himself is so high above you. Should you try climbing it to get a better picture?
 1. Yes
-2. No",,,,,MC,,,GWStatue,GWStatue1,,
-GWStatue,"You're about to climb the statue when you slip and fall. You land on your back and it feels like the wind was just knocked out of you. Alright--maybe that wasn't a good idea. After taking a moment to regain your breath, you just settle for a regular picture on the ground.",,,,,,Philly6,,,,,
-GWStatue1,"Yeah, on second thought, maybe it isn't a good idea to climb such an important statue. It might get you kicked out before you can even get a chance to see the Liberty Bell up close. You settle for a regular picture on the ground.",,,,,,Philly6,,,,,
-Philly6,"After taking your picture, you finally go into Independence Hall where you pay for a tour. They eventually take you to the Liberty Bell, but you can see a large crack running through it. You wonder how hard it must've been hit for such a large crack to form. You shudder. At least the guy that broke it is probably dead by now.",,,,,,Philly7,,,,,
+2. No",independence hall,,,,MC,,,GWStatue,GWStatue1,,
+GWStatue,"You're about to climb the statue when you slip and fall. You land on your back and it feels like the wind was just knocked out of you. Alright--maybe that wasn't a good idea. After taking a moment to regain your breath, you just settle for a regular picture on the ground.",independence hall,,,,,Philly6,,,,,
+GWStatue1,"Yeah, on second thought, maybe it isn't a good idea to climb such an important statue. It might get you kicked out before you can even get a chance to see the Liberty Bell up close. You settle for a regular picture on the ground.",independence hall,bell,,,,Philly6,,,,,
+Philly6,"After taking your picture, you finally go into Independence Hall where you pay for a tour. They eventually take you to the Liberty Bell, but you can see a large crack running through it. You wonder how hard it must've been hit for such a large crack to form. You shudder. At least the guy that broke it is probably dead by now.",independence hall,bell,,,,Philly7,,,,,
 Philly7,"After you finish your tour of Independence Hall, the group decides they have time for one more landmark. Unfortunately, the others seem to be split on which statue to go to. Vritti and Yingjia want to see the LOVE statue, but Xing and Andre wish to see the Rocky Statue. You're the tie breaker.
 1. LOVE Statue
-2. Rocky Statue",,,,,MC,,,LOVE,Rocky,,
-LOVE,"You side with Vritti and Yingjia. You want to see the LOVE statue too. You make your way over to Love Park, and you finally spot the large red letters. You're honestly not sure what you expected--it really is just a statue that spells out 'LOVE.'",,,,,,PhillyEnd,,,,,
-Rocky,"You side with Xing and Andrew. You want to see the Rocky statue too. You make your way over to the Philadelphia Museum of Art Steps, and you finally spot the metal version of Rocky. You're honestly not sure what you expected--it really is just a statue of the fictional boxer.",,,,,,PhillyEnd,,,,,
-PhillyEnd,"After a long day of sight-seeing, you check into the Rittenhouse Hotel. Tomorrow will be an even bigger day, so you should be well-rested in preparation.",,,,,,Washington,,,,,
+2. Rocky Statue",sky,love,,,MC,,,LOVE,Rocky,,
+LOVE,"You side with Vritti and Yingjia. You want to see the LOVE statue too. You make your way over to Love Park, and you finally spot the large red letters. You're honestly not sure what you expected--it really is just a statue that spells out 'LOVE.'",sky,love,,,,PhillyEnd,,,,,
+Rocky,"You side with Xing and Andrew. You want to see the Rocky statue too. You make your way over to the Philadelphia Museum of Art Steps, and you finally spot the metal version of Rocky. You're honestly not sure what you expected--it really is just a statue of the fictional boxer.",sky,love,,,,PhillyEnd,,,,,
+PhillyEnd,"After a long day of sight-seeing, you check into the Rittenhouse Hotel. Tomorrow will be an even bigger day, so you should be well-rested in preparation.",,bus,,,,Washington,,,,,
 ,,,,,,,,,,,,
-Washington,"Going down the coast, you arrive at the District of Columbia, where below the calm skies reign chants of protest.
+Washington,"Going down the coast, you arrive at the District of Columbia, driving right into Lafayette Park, where below the calm skies reign chants of protest.
 1. Join the protest.
-2. Go somewhere else.",,,,,,Protest,,,,,
-Protest,"You're not really sure what the protest is about, but you join it anyway because it might look good on your college essay.",,,,,,Protest1,,,,,
-Protest1,"You follow the flow of the crowd towards the White House. It took some walking, but eventually you reach the home of Joe.",,,,,,Protest2,,,,,
+2. Go somewhere else.",white house,,starspangledbanner,,MC,,,Protest,Protest,,
+Protest,"You're not really sure what the protest is about, but you join it anyway because it might look good on your college essay.",white house,,,,,Protest1,,,,,
+Protest1,"You follow the flow of the crowd towards the White House. It took some walking, but eventually you reach the home of Joe.",white house,,,,,Protest2,,,,,
 Protest2,"You see Joe standing at the patio, sunglasses donned.
 1. Don a pair of sunglasses in reciprocation.
-2. Loudly air your grievances from a distance.",,,,,MC,,,ProtestEnd,Protest3,,
-Protest3,"Joe tries to make out what you are saying, but to tell the truth he can't hear much this far away.",,,,,,Protest4,,,,,
+2. Loudly air your grievances from a distance.",white house,,,,MC,,,ProtestEnd,Protest3,,
+Protest3,"Joe tries to make out what you are saying, but to tell the truth he can't hear much this far away.",white house,,,,,Protest4,,,,,
 Protest4,"Still, he tells you nothing can be done because judging from your state of origin, the Republicans are probably against what you are saying.
 1. Sigh and go somewhere else.
-2. Keep shouting at him.",,,,,MC,,,ProtestEnd,Protest5,,
-Protest5,You keep shouting while the rest of the crowd gets bored and goes away. You keep shouting so long he capitulates and invites you all to dinner.,,,,,,ProtestEnd,,,,,
-ProtestEnd,"You eat dinner at the White House. Unfortunately, there is an infant formula shortage, so you can't have your favorite food, but you did get to have some nice tuna, salmon, and spaghetti.",,,,,,Monuments,,,,,
-Monuments,"Alright, you decide to look at some long dead people instead. First stop: Lincoln Memorial.",,,,,,Monuments1,,,,,
-Monuments1,"There was actually a competing proposal to build a log cabin as his memorial instead, but the plan of enshrining the man in gargantuan marble ended up winning.",,,,,,Monuments2,,,,,
+2. Keep shouting at him.",white house,,,,MC,,,ProtestEnd,Protest5,,
+Protest5,You keep shouting while the rest of the crowd gets bored and goes away. You keep shouting so long he capitulates and invites you all to dinner.,white house,,,,,ProtestEnd,,,,,
+ProtestEnd,"You eat dinner at the White House. Unfortunately, there is an infant formula shortage, so you can't have your favorite food, but you did get to have some nice tuna, salmon, and spaghetti.",joe biden,,,,,Monuments,,,,,
+Monuments,"Alright, you decide to look at some long dead people instead. First stop: Lincoln Memorial.",lincoln,,,,,Monuments1,,,,,
+Monuments1,"There was actually a competing proposal to build a log cabin as his memorial instead, but the plan of enshrining the man in gargantuan marble ended up winning.",lincoln,,,,,Monuments2,,,,,
 Monuments2,"As you enter the building, Lincoln's eyes catches yours. He stares from a height a hundred times more imposing than Mr. Green. You feel threatened.
 1. Run.",lincoln,,,,,Monuments3,,,,,
 Monuments3,"You run straight back to the Washington Monument. The towering obelisk is even more remniscent of the towering figure of Mr. Green.
-1. Run.",,,,,,Monuments4,,,,,
-Monuments4,You run to the White House for shelter. Joe lets you in and invites your companions to dinner.,,,,,,Orlando,,,,,
+1. Run.",washington monument,,,,,Monuments4,,,,,
+Monuments4,You run to the White House for shelter. Joe lets you in and invites your companions to supper.,white house,,,,,Orlando,,,,,
 ,,,,,,,,,,,,
-Orlando,"After your very professional visit to the White House, it's finally time to let loose. In fact, it's nearly time for your road trip to come to an end, but before that, you have one last stop to make: Orlando!",,,,,,Orlando1,,,,,
-Orlando1,"You've always wanted to go to Disneyworld. Of course, there's a Disneyland in your very own home-state of California, but obviously, they aren't the same. It seems like everybody else is excited to go to Disneyland too.",,,,,,Orlando2,,,,,
-Orlando2,"With everybody on board, you make haste for Disneyworld, where you also book rooms to stay the night.",,,,,,Orlando3,,,,,
+Orlando,"After your very professional visit to the White House, it's finally time to let loose. In fact, it's nearly time for your road trip to come to an end, but before that, you have one last stop to make: Orlando!",,bus,lifeisahighway,,,Orlando1,,,,,
+Orlando1,"You've always wanted to go to Disneyworld. Of course, there's a Disneyland in your very own home-state of California, but obviously, they aren't the same. It seems like everybody else is excited to go to Disneyworld too.",disneyday,,,,,Orlando2,,,,,
+Orlando2,"With everybody on board, you make haste for Disneyworld, where you also book rooms to stay the night.",disneyday,,,,,Orlando3,,,,,
 Orlando3,"Upon paying a ridiculously expensive price for some tickets (which isn't really a problem for you, but really? In this economy?), you finally enter Disneyworld. What ride do you want to go on first?
 1. Space Mountain
 2. Haunted Mansion
-3. It's a Small World ",,,,,MC,,,SpaceM,HauntedM,SmallW,
+3. It's a Small World ",disneyday,,,,MC,,,SpaceM,HauntedM,SmallW,
 SpaceM,"You decide to go on Space Mountain. If you're going to be honest, the flashing lights strained your eyes a little, but either way, you don't get seizures from bright lights and it was fun. What ride do you want to go on next?
 1. Haunted Mansion
 2. It's a Small World
-3. Maybe it's time for lunch",,,,,MC,,,HauntedM,SmallW,DisneyLunch,
+3. Maybe it's time for lunch",spacemountain,,,,MC,,,HauntedM,SmallW,DisneyLunch,
 HauntedM,"You decide to go on the Haunted Mansion. It's not particularly adrenaline-pumping, but you enjoyed the narration and the super-cool set designs and special effects. What ride do you want to go on next?
 1. Space Mountain
 2. It's a Small World
-3. Maybe it's time for lunch",,,,,MC,,,SpaceM,SmallW,DisneyLunch,
+3. Maybe it's time for lunch",hauntedmansion,,,,MC,,,SpaceM,SmallW,DisneyLunch,
 SmallW,"You decide to go on It's a Small World. Well, what did you expect? It's a kiddy ride (but admittedly, you did find the singing dolls a little creepy). What ride do you want to go on next?
 1. Space Mountain
 2. Haunted Mansion
-3. Maybe it's time for lunch",,,,,MC,,,SpaceM,HauntedM,DisneyLunch,
-DisneyLunch,"You decide it's time for lunch. You are starting to feel a little hungry, especially after waiting in lines all morning. A trip to Disney is never complete without trying a jumbo turkey leg--so that's exactly what you do.",,,,,,DisneyLunch1,,,,,
-DisneyLunch1,You finish the entire turkey leg by yourself. You're full. Maybe a bit too fu--you throw up in a nearby trash can. Perhaps you should've thought about sharing that turkey leg. You suppose these are the consequences of greed.,,,,,,DisneyLunch2,,,,,
+3. Maybe it's time for lunch",itsasmallworld,,,,MC,,,SpaceM,HauntedM,DisneyLunch,
+DisneyLunch,"You decide it's time for lunch. You are starting to feel a little hungry, especially after waiting in lines all morning. A trip to Disney is never complete without trying a jumbo turkey leg--so that's exactly what you do.",disneylunch,,,,,DisneyLunch1,,,,,
+DisneyLunch1,You finish the entire turkey leg by yourself. You're full. Maybe a bit too fu--you throw up in a nearby trash can. Perhaps you should've thought about sharing that turkey leg. You suppose these are the consequences of greed.,disneylunch,,,,,DisneyLunch2,,,,,
 DisneyLunch2,"After throwing up, you're a little worse for wear. Are you up to going on more rides?
 1. Yes
-2. No",,,,,MC,,,Ride,Stop,,
+2. No",disneylunch,,,,MC,,,Ride,Stop,,
 Ride,"Although you've just thrown up, you're determined to go on more rides--you can't just waste all that money you spent on tickets. Splash Mountain is suggested, and suddenly you feel a bit more nauseous, but you stomach those feelings and decide to go anyways.",,,,,,Ride1,,,,,
 Ride1,"You go on Splash Mountain, and you start feeling a little better right before it's your turn. However, the ride starts moving and suddenly you're nauseous again. You end up throwing up (again) on the ride--all over the stranger sitting next to you. How embarrassing.",,,,,,Ride2,,,,,
 Ride2,"The ride concludes to the end, and your friends hastily apologize to the stranger because you're still too busy dry heaving in a nearby trash can. Maybe you shouldn't have gone on Splash Mountain after all.",,,,,,DisneyEnd,,,,,
-Stop,"You decide to listen to your body--you still don't feel very well. You sit out on the next few rides. You're a little disappointed that you couldn't go on the rides, but you eventually start feeling better. At least you didn't embarrass yourself by throwing up all over someone, right?",,,,,,DisneyEnd,,,,,
-DisneyEnd,"By now, the sun has set, and in it's place, the moon. There's a fireworks show starting soon, so you and the others rush toward Main Street early to get a good view. Luckily, you land a spot right in front, where there aren't any abnormally tall people to obscure your vision.",,,,,,Conclusion,,,,,
-Conclusion,"The fireworks begin, and you can't help but be in awe of the fantastic showcase. As the light illuminates your face, you reminisce of your summer adventure. It's been a fun several months, travelling all over the United States. You've met a lot of new people, eaten a lot of new food, and most importantly, you've learned a lot more--about America and yourself.",,,,,,Conclusion1,,,,,
-Conclusion1,"However, your senior year does happen to start in a week.",,,,,,Conclusion2,,,,,
-Conclusion2,It's time for you to return home--to Arcadia.,,,,,,Conclusion3,,,,,
+Stop,"You decide to listen to your body--you still don't feel very well. You sit out on the next few rides. You're a little disappointed that you couldn't go on the rides, but you eventually start feeling better. At least you didn't embarrass yourself by throwing up all over someone, right?",disneybench,,,,,DisneyEnd,,,,,
+DisneyEnd,"By now, the sun has set, and in it's place, the moon. There's a fireworks show starting soon, so you and the others rush toward Main Street early to get a good view. Luckily, you land a spot right in front, where there aren't any abnormally tall people to obscure your vision.",disneyfireworks,,,,,Conclusion,,,,,
+Conclusion,"The fireworks begin, and you can't help but be in awe of the fantastic showcase. As the light illuminates your face, you reminisce of your summer adventure. It's been a fun several months, travelling all over the United States. You've met a lot of new people, eaten a lot of new food, and most importantly, you've learned a lot more--about America and yourself.",disneyfireworks,,up,,,Conclusion1,,,,,
+Conclusion1,"However, your senior year does happen to start in a week.",disneyfireworks,,,,,Conclusion2,,,,,
+Conclusion2,It's time for you to return home--to Arcadia.,disneyfireworks,,,,,Conclusion3,,,,,
 Conclusion3,THE END,,,,,,Credits,,,,,
 Credits,"Project by Vritti, Yingjia, Xing and Andre
 Written (mostly) by Yingjia
