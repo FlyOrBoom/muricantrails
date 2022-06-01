@@ -49,8 +49,8 @@ FauxTrip5,"At last, you spot an exit that leads you north. Xing suggests, ""mayb
 1. Agree with Xing. After all, totalitarian leaders tend to gain power in times of popular discontent, and it's bad to be an enemy of the powerful.
 2. No, endure the traffic just a little longer.",mojave,bus,,,MC,,,YosemiteTrip,FauxTrip6,,
 FauxTrip6,You bake in the Californian summer sun as you stand alone against going to Las Vegas.,mojave,bus,,,TRIP,FauxTrip7,,,,,
-FauxTrip7,"Finally, after three more hours in traffic, you concede the debate. You take the next exit north. You're now on your way to Yosemite.",mojave,bus,,,TRIP,YosemiteTrip,,,,,
-YosemiteTrip,You embark on your journey to Yosemite!,mojave,busWest,,,TRIP,YosemiteTrip1,,,,,
+FauxTrip7,"Finally, after three more hours in traffic, you concede the debate. You take the next exit north. You're now on your way to Yosemite.",mojave,bus,,,TRIP,YosemiteTrip1,,,,,
+YosemiteTrip,You embark on your journey to Yosemite!,mojave,busWest,anotherdayofsun,,TRIP,YosemiteTrip1,,,,,
 YosemiteTrip1,"Heading north, you enter California's Central Valley.",centralValley,busWest,,,TRIP,YosemiteTrip2,,,,,
 YosemiteTrip2,You pass by vast stretches of farmland. Xing's started hallucinating Cesar Chavez protesting outside the window.,centralValley,chavez,,,TRIP,YosemiteTrip3,,,,,
 YosemiteTrip3,You try Nathan's food but it tastes bad without cheese.,centralValley,busWest,,,TRIP,YosemiteTrip4,,,,,
@@ -94,8 +94,11 @@ Casino1,"Instead of using their Secure Age Verification Browser, you open their 
 Casino2,"But too soon! You get caught by Security Officer Raul Fring. He shoves you out from the casino, back to the Strip.",vegas,,,,,Casino3,,,,,
 Casino3,"It's 1 am, and you can't think of any other pseudolegal activites to do, so you check into the Bellagio Hotel and try to sleep.",vegas,,,,,Vegas3,,,,,
 Vegas2,You check into the Bellagio Hotel and try to sleep.,vegas,,,,,Vegas3,,,,,
-Vegas3,"Try as hard as you can, but you can't sleep. The environment, the excitement of Vegas is simply too much to bear-- or is it just the hunger of not having eaten a proper dinner in days? Regardless, you abandon sleep for a buffet to fill your stomach.",vegas,,,,,Vegas4,,,,,
-Vegas4,[Insert food description here],vegas,,,,,Vegas5,,,,,
+Vegas3,"Try as hard as you can, but you can't sleep. The environment, the excitement of Vegas is simply too much to bear-- or is it just the hunger of not having eaten a proper dinner in days? Regardless, you and your friends abandon sleep for a buffet to fill your stomach.",vegas,,,,,Vegas4,,,,,
+Vegas4,"Xing the _Xing found some shrimp chow mein and was satisfied. Andre the _Andre got biscuits and tea. What do you want to eat?
+1. Gold leaf coated truffle, $1000.00
+2. Glass of water, $10.00
+3. Literal plastic poker chip, $1.00",vegas,,,,PURCHASE,Vegas5,,1000,10,1,
 Vegas5,"While eating, Andre's hands let slip a teapot and breaks it! An employee confronts him and he blames it on you. What will you do?
 1. Run! Run while you can!!
 2. Offer to pay the employee hush money.",vegas,,,,MC,,,Vegas6,Vegas6,,
@@ -108,7 +111,7 @@ UtahTrip,"So you get on the desert road again, driving under twilight towards th
 UtahTrip1,"There really is nothing to see in a desert at night. You rest til dawn, then start driving again.",,bus,,,TRIP,UtahTrip2,,,,,
 UtahTrip2,"After six hundred miles, you finally reach the Great Salt Lake in the afternoon.",utahDay,bus,,,TRIP,Utah,,,,,
 ,,,,,,,,,,,,
-Utah,"While the rest of the group rested in the bus, Andre went to a cousin's wedding that he had recently been last minute invited to.",utahDay,bus,livinonaprayer,,,Utah1,,,,,
+Utah,"While the rest of the group rested in the bus, Andre went to a cousin's wedding that he had recently been last minute invited to.",utahDay,bus,,,,Utah1,,,,,
 Utah1,"You couldn't sleep. This restless energy is impossible to contain. You wish senioritis could strike you early, but you feel the opposite of lethargy.
 1. Follow Andre to the wedding.
 2. Check if the Great Salt Lake is really salty.",utahEvening,bus,,,MC,,,Wedding,Salt,,
@@ -120,9 +123,9 @@ Salt2,You run back to the bus. Everyone is still asleep. You take Vritti the _Vr
 Salt3,"You walk back to the bus, as if not one deviant thought had ever came across your mind.",utahEvening,,,,,Utah2,,,,,
 Wedding,Andre had fallen asleep during most of the wedding but he definently enjoyed the food. ,utahEvening,,,,,Wedding1,,,,,
 Wedding1, Andre was super embarrased for showing up without a suit but his cousin didn't mind and was happy for his attendence.,utahEvening,,,,,Utah2,,,,,
-Utah2,Andre returned later that night with loads of food he took. [Insert food description here],utahEvening,bus,,,,UtahEnd,,,,,
+Utah2,"Andre returned later that night with loads of food he borrowed from the wedding: three cakes, two pizzas, and a local Crown Burger.",utahEvening,bus,,,,UtahEnd,,,,,
 ,,,,,,,,,,,,
-UtahEnd,Utah is so hot this time of year! Even the night is hard to bear. Some place up north might be better.,utahEvening,busWest,,,TRIP,SeattleTrip,,,,,
+UtahEnd,Utah is so hot this time of year! Even the night is hard to bear. Some place up north might be better.,utahEvening,busWest,livinonaprayer,,TRIP,SeattleTrip,,,,,
 SeattleTrip,You remember how Bezos is really rich and his company is somewhere north.,mojave,busWest,,,TRIP,SeattleTrip1,,,,,
 SeattleTrip1,"So you start for Seattle, Washington.",mojave,busWest,,,TRIP,SeattleTrip2,,,,,
 SeattleTrip2,"Driving northwest, you try to race the Sun.",mojave,busWest,,,TRIP,SeattleTrip3,,,,,
@@ -136,7 +139,7 @@ Seattle1,"You take in the view of the Seattle cityscape. You can see Mt. Whittie
 Seattle2,"You descend the Space Needle. It's lunch time and you're hungry. The Pike Place, a massive local farmers' market, sounds like a good place to get food.",seattleDay,,,,,Seattle4,,,,,
 Seattle3,"You stay at the top of the Space Needle for a little longer, but it's lunch time and you start to get hungry, so you descend. The Pike Place Market sounds like a good place to get food.",seattleDay,,,,,Seattle4,,,,,
 Seattle4,"You arrive at Pike Place Market. You see some fish being thrown around, but the group eventually decides they want Thai food. You go to Jasmine Thai Restaurant and enjoy some authentic thai food.",seattleDay,,,,,Seattle5,,,,,
-Seattle5,"Before you leave for the Midwest, Yingjia suggests stocking up some more supplies.
+Seattle5,"Before you leave for the Midwest, Yingjia the _Yingjia suggests stocking up some more supplies.
 1. Go to some boring grocery store
 2. Go to the Amazon grocery store",market,,jeffreybezos,,MC,Seattle6,,Seattle6,Seattle7,,
 Seattle6,"Nobody else wants to go to a boring grocery store. You end up going to the Amazon grocery store anyways.
@@ -157,7 +160,7 @@ JojoSiwa,You go buy Jojo Siwa merchandise. Now everyone has their own sparkly bo
 Rollercoaster,"You go on one of the rollercoasters. It was fun, but after getting off rollercoaster, Xing throws up in a nearby trash can due to nausea. Guess you can't go on any more rides.",rollercoaster,,,,,MallEnd,,,,,
 MallEnd,"Everyone else, on the other hand, is very hungry. Luckily, there's a lot of Nickolodeon-inspired food at the Nickelodeon Universe. You enjoy a burger and milkshake before returning to the schoolbus for your next stop, Chicago, Illinois!",,,,,,Chicago,,,,,
 ,,,,,,,,,,,,
-Chicago,Chicago!!!,chicago,bus,allstar,,,Chicago1,,,,,
+Chicago,Chicago!!!,chicago,bus,,,,Chicago1,,,,,
 Chicago1,"You finally arrive in Chicago! There's many things to do in Chicago, but perhaps you'd like something to eat first? And what else would you eat in Chicago than the famous Chicago-styled deep dish pizza?",chicagoDay,bus,,,,Chicago2,,,,,
 Chicago2,"In your APUSH class, you vaguely remember Mr. Green mentioning a pizza place named Giordano's.",chicagoDay,,,,,Chicago3,,,,,
 Chicago3,"You head there and once you settle into a table, the entire group orders a large deep dish pizza to share.",chicagoDay,,,,,Chicago4,,,,,
@@ -225,7 +228,7 @@ JFK2,"You conclude your browsing of the JFK museum. You've felt like you've lear
 ,,,,,,,,,,,,
 NYC,"You drive into New York City and try to look for a parking space for your schoolbus. It's very crowded, and after 10 hours of searching, you gave up and decided to park in Central Park. Now everyone's hungry. What should we eat?
 1. New York Style Pizza
-2. Street Hot Dogs",nyc,bus,,,MC,,,NYPizza,NYHotDog,,
+2. Street Hot Dogs",nyc,bus,allstar,,MC,,,NYPizza,NYHotDog,,
 NYPizza,"You've heard New York is very famous for their pizza. Apparently city water gives the pizza crust special characteristics? Nonetheless, you're eager to try.",nyc,,,,,NYC1,,,,,
 NYHotDog,"Are you kidding? You're in New York City and you want to eat hot dogs??? Everybody else wanted to try the pizza, and since the country runs on a democracy, it's too bad for you.",nyc,,,,,NYC1,,,,,
 NYC1,"After a fulfilling meal composed of pizza and a drink of your choice, it's time to go sightseeing! There are many historical monuments in the city of New York. Where do you want to go first?
