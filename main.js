@@ -16,12 +16,14 @@ ${dash}`,
 	'PURCHASE': `
 You have $_Money.
 Buy an item: ${dash}
-|PRESS SPACE TO EXIT|`
+|PRESS SPACE TO EXIT|`,
+
+	'CREDITS':''
 
 }
 
 const v = {
-	Version: '2022.06.01.4',
+	Version: '2022.06.01',
 	Money: 1619,
 	Items: {}
 }
