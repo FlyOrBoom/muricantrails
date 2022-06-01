@@ -111,7 +111,7 @@ Utah2,"Andre returned later that night with loads of food he borrowed from the w
 ,,,,,,,,,,,,
 UtahEnd,Utah is so hot this time of year! Even the night is hard to bear. Some place up north might be better.,utahEvening,busWest,,,TRIP,SeattleTrip,,,,,
 SeattleTrip,The thought of Las Vegas money made you dream of becoming a billionaire.,mojave,busWest,jeffreybezos,,TRIP,SeattleTrip1,,,,,
-SeattleTrip1,You remember that time when you gave Bezos your number. Maybe you should go ask him how he did it.,mojave,busWest,,,TRIP,SeattleTrip2,,,,,
+SeattleTrip1,You remember that time when you gave Jeff your number. Maybe you should go ask him how he did it.,mojave,busWest,,,TRIP,SeattleTrip2,,,,,
 SeattleTrip2,"So you start for Seattle, Washington. Driving northwest, you try to race the Sun.",mojave,busWest,livinonaprayer,,TRIP,SeattleTrip3,,,,,
 SeattleTrip3,It was futile. The journey still took two days.,seattleNight,busWest,,,TRIP,SeattleTrip4,,,,,
 SeattleTrip4,"At Seattle, you park the bus underneath the Space Needle, a giant Needle pointing at Space. Really, it was built during a World Fair so people can go and point at the ground.",seattleNight,,,,TRIP,Seattle,,,,,
@@ -147,8 +147,8 @@ MallEnd,"Everyone else, on the other hand, is very hungry. Luckily, there's a lo
 Chicago,Chicago!!!,chicago,bus,,,,Chicago1,,,,,
 Chicago1,"You finally arrive in Chicago! There's many things to do in Chicago, but perhaps you'd like something to eat first? And what else would you eat in Chicago than the famous Chicago-styled deep dish pizza?",chicagoDay,bus,,,,Chicago2,,,,,
 Chicago2,"In your APUSH class, you vaguely remember Mr. Green mentioning a pizza place named Giordano's.",chicagoDay,,,,,Chicago3,,,,,
-Chicago3,"You head there and once you settle into a table, the entire group orders a large deep dish pizza to share.",,chicagoPizza,,,,Chicago4,,,,,
-Chicago4,"It's quite different from the other pizzas you've tried, namely because you can't really see any cheese on the surface of the pizza. However, you are pleasantly surprised to taste the cheese at the bottom of the pie once you bite in.",,chicagoPizza,,,,Chicago5,,,,,
+Chicago3,"You head there and once you settle into a table, the entire group orders a large deep dish pizza to share.",chicagoDay,chicagoPizza,,,,Chicago4,,,,,
+Chicago4,"It's quite different from the other pizzas you've tried, namely because you can't really see any cheese on the surface of the pizza. However, you are pleasantly surprised to taste the cheese at the bottom of the pie once you bite in.",chicagoDay,chicagoPizza,,,,Chicago5,,,,,
 Chicago5,"After finishing your meal, it's time to explore the streets of Chicago. Where would you like to go first?
 1. Take a boat tour of the Chicago River
 2. Visit the famous Cloud Gate (aka the Bean)
@@ -262,7 +262,7 @@ PhillyEnd,"After a long day of sight-seeing, you check into the Rittenhouse Hote
 ,,,,,,,,,,,,
 Washington,"Going down the coast, you arrive at the District of Columbia, driving right into Lafayette Park, where below the calm skies reign chants of protest.
 1. Join the protest.
-2. Go somewhere else.",lafayette,,starspangledbanner,,MC,,,Protest,Protest,,
+2. Go somewhere else.",lafayette,,twilight,,MC,,,Protest,Protest,,
 Protest,"You're not really sure what the protest is about, but you join it anyway because it might look good on your college essay.",lafayette,,,,,Protest1,,,,,
 Protest1,"You follow the flow of the crowd towards the White House. It took some walking, but eventually you reach the home of Joe.",lafayette,,,,,Protest2,,,,,
 Protest2,"You see Joe standing at the patio, sunglasses donned.
@@ -314,13 +314,11 @@ DisneyEnd,"By now, the sun has set, and in it's place, the moon. There's a firew
 Conclusion,"The fireworks begin, and you can't help but be in awe of the fantastic showcase. As the light illuminates your face, you reminisce of your summer adventure. It's been a fun several months, travelling all over the United States. You've met a lot of new people, eaten a lot of new food, and most importantly, you've learned a lot more--about America and yourself.",disneyfireworks,,up,,,Conclusion1,,,,,
 Conclusion1,"However, your senior year does happen to start in a week.",disneyfireworks,,,,,Conclusion2,,,,,
 Conclusion2,It's time for you to return home--to Arcadia.,disneyfireworks,,,,,Conclusion3,,,,,
-Conclusion3,THE END,,,,,,Credits,,,,,
+Conclusion3,THE END,,,,,END,Credits,,,,,
 Credits,"MURICAN TRAILS _Version
 |Play it at muricantrails.github.io|
 
 An APUSH project by Vritti, Yingjia, Xing and Andre
-Written (mostly) by Yingjia
-Programmed and illustrated (mostly) by Xing
 
 Computer screen (Unsplash stock photo) by PJ Gal-Szabo
-Music (illegally) by Billy Joel, Bo Burnham, Joe Hisaishi, Bon Jovie, Toto, Journey, Electronic Ligth Orchestra, The Beatles, and The Eagles",,,,,,,,,,,
+Music (illegally) by Billy Joel, Bo Burnham, Joe Hisaishi, Bon Jovie, Toto, Journey, Electronic Light Orchestra, and The Eagles",,,,,,,,,,,
